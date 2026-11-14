@@ -14,11 +14,12 @@
 
 ## 확인한 결과
 
-**28개 독립 실행 프로그램 · 110개 실행 검사 통과 · C11 경고 0개.** Windows에서 Zig 0.14.1의 C 컴파일러로 확인했다.
+**50개 독립 실행 프로그램 · 178개 실행 검사 통과 · C11 경고 0개.** Windows에서 Zig 0.14.1의 C 컴파일러로 확인했다.
 
 - 정상 입력뿐 아니라 학점 경계, 반복 종료·재실행, 0 분모, 음수 지수와 정수 오버플로를 검사했다.
 - 배열 전치, 스택 LIFO·용량 초과·빈 스택, 난수 게임의 정답 도달과 대소 힌트를 확인했다.
-- 28개 중 1개는 첫 실행 예제이다. 일부 교재 문제는 요약된 주제만 구현했으며, **교재 본문이 없는 문제까지 모두 해결했다는 의미는 아니다.** [미확인 문항과 구현 범위](docs/coverage.md)
+- 추가 교재 사진을 반영해 22개 프로그램을 보완하고, 배열 복사·전역변수·스택·최솟값 풀이를 교재 조건에 맞췄다.
+- 1주차 `mybook` 솔루션과 3개 프로젝트를 추가했다. Visual Studio GUI 실행은 수행하지 않았다. [문항 대응과 구현 선택](docs/coverage.md)
 
 [검증 방법과 한계](results/README.md) · [기계 판독 검사 결과](results/verification.json) · [코드 출처](docs/provenance.md)
 
@@ -26,19 +27,19 @@
 
 | 실습 | 다룬 내용 | 실행 프로그램 |
 | --- | --- | ---: |
-| [week01](week01/README.md) | 개발 환경과 첫 실행 | 1 |
-| [week02](week02/README.md) | 변수·문자·실수 | 2 |
-| [week03](week03/README.md) | 상수와 자료형 | 1 |
-| [week04](week04/README.md) | 전처리·헤더·입출력 | 2 |
+| [week01](week01/README.md) | 개발 환경과 첫 실행 | 4 |
+| [week02](week02/README.md) | 변수·문자·실수 | 4 |
+| [week03](week03/README.md) | 상수와 자료형 | 5 |
+| [week04](week04/README.md) | 전처리·헤더·입출력 | 5 |
 | [week05](week05/README.md) | 산술식과 비교 | 4 |
-| [week06](week06/README.md) | 논리 연산자 | 1 |
-| [week07](week07/README.md) | 조건문과 문자 판별 | 2 |
-| [week08](week08/README.md) | 반복문 | 3 |
-| [week09](week09/README.md) | 배열과 전치행렬 | 2 |
+| [week06](week06/README.md) | 논리 연산과 수치 계산 | 4 |
+| [week07](week07/README.md) | 조건문과 문자 판별 | 4 |
+| [week08](week08/README.md) | 반복문 | 4 |
+| [week09](week09/README.md) | 배열과 행렬 연산 | 4 |
 | [week10](week10/README.md) | 함수와 원형 | 4 |
-| [week11](week11/README.md) | 배열 함수와 난수 | 2 |
+| [week11](week11/README.md) | 배열 함수·난수·재귀 | 3 |
 | [week12](week12/README.md) | 변수 유효범위와 스택 | 2 |
-| [week13](week13/README.md) | 포인터와 배열 | 2 |
+| [week13](week13/README.md) | 포인터와 배열 | 3 |
 
 각 주차에서 **목표 → 과정 → 결과** 순서로 문제 요약, 원문 페이지, 코드, 입력 예시와 실제 로그를 확인할 수 있다.
 
@@ -58,12 +59,12 @@ Zig를 사용하는 경우:
 python tools/verify.py --cc "zig cc"
 ```
 
-개별 예제는 주차별 명령으로 실행한다. Visual Studio에서는 C 파일 하나를 프로젝트에 추가하고, `week12` 난수 게임만 두 파일을 함께 추가한다. [Windows·Visual Studio 안내](docs/reproduction.md)
+개별 예제는 주차별 명령으로 실행한다. Visual Studio의 1주차 예제는 [mybook 솔루션](week01/mybook/README.md)을 열어 실행한다. 다른 예제는 C 파일 하나를 프로젝트에 추가하고, `week12` 난수 게임만 두 파일을 함께 추가한다. [Windows·Visual Studio 안내](docs/reproduction.md)
 
 | 경로 | 내용 |
 | --- | --- |
 | `week01/`–`week13/` | 과제별 코드·설명·실행 로그 |
-| [docs/](docs/README.md) | 원문 대응, 누락 문항, 입력과 빌드 조건 |
+| [docs/](docs/README.md) | 원문 대응, 구현 선택, 입력과 빌드 조건 |
 | [tests/](tests/README.md) | 프로그램 목록과 기대 출력 |
 | [tools/](tools/README.md) | 컴파일·실행·경계값 검사 도구 |
 | [results/](results/README.md) | 실제 검증 결과와 소스 해시 |
