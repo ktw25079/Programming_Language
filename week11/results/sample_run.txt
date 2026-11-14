@@ -26,21 +26,17 @@ higher
 higher
 higher
 higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
 correct
+
+$ week11_assignment03_recursive_sum.exe
+stdin: (none)
+n=1 sum=1
+n=2 sum=3
+n=3 sum=6
+n=4 sum=10
+n=5 sum=15
+n=6 sum=21
+n=7 sum=28
+n=8 sum=36
+n=9 sum=45
+n=10 sum=55
