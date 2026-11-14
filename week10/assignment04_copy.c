@@ -1,14 +1,21 @@
 #include <stdio.h>
-#include <stddef.h>
-static void copy_array(const int source[],int destination[],size_t count)
+void copyarray(int from[], int to[], int n)
 {
-    for (size_t i=0;i<count;++i) destination[i]=source[i];
+    for (int i=0;i<n;++i) to[i]=from[i];
+}
+static void print_array(const char *name, const int a[], int n)
+{
+    printf("%s:",name);
+    for (int i=0;i<n;++i) printf(" %d",a[i]);
+    putchar('\n');
 }
 int main(void)
 {
-    const int source[]={3,-1,4,1,5};
-    int destination[5];
-    copy_array(source,destination,5);
-    for (int i=0;i<5;++i) printf("%d%c",destination[i],i==4?'\n':' ');
+    int a[]={4,7,9,3,6};
+    int b[]={10,20,30,40,50,60};
+    print_array("a",a,5);
+    print_array("b before",b,6);
+    copyarray(a,b,5);
+    print_array("b after",b,6);
     return 0;
 }
