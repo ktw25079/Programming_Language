@@ -44,3 +44,7 @@ stdin: 3
 1 1 1
 2 4 8
 3 9 27
+
+$ week08_assignment04_ex07_sum_limit.exe
+stdin: (none)
+n=140 sum=9870 next=10011
