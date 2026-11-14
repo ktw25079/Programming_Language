@@ -25,7 +25,7 @@ def main():
     logs = {}
 
     def check(exe, name, stdin, expected=None, code=0):
-        run = subprocess.run([str(exe)], input=stdin, text=True, capture_output=True, timeout=5)
+        run = subprocess.run([str(exe)], input=stdin, text=True, encoding='utf-8', capture_output=True, timeout=5)
         assert run.returncode == code, (name, 'exit', run.returncode, run.stdout, run.stderr)
         if expected is not None:
             assert run.stdout == expected, (name, 'output', run.stdout, expected)
@@ -57,7 +57,7 @@ def main():
             results.append({'case':p['path']+': hint consistency and reachable target','passed':True})
         logs.setdefault(p['week'], []).append(f"$ {exe.name}\nstdin: {sample_input.strip() or '(none)'}\n{output}")
         if p['stdin'] or p['stdout'] is None:
-            check(exe, p['path']+': invalid input', '?\n', code=1)
+            check(exe, p['path']+': invalid input', p.get('invalid_stdin', '?\n'), code=1)
 
     def exe(week, name):
         return build/(f'week{week:02d}_{name}'+('.exe' if os.name=='nt' else ''))
@@ -94,7 +94,26 @@ def main():
     check(exe(10,'assignment03_power'),'negative exponent','3 -1',code=1)
     check(exe(10,'assignment03_power'),'overflow','100 5','error: integer overflow\n',code=1)
     check(exe(11,'assignment01_matrix'),'negative increment','-2','before:\n1 2 3\n4 5 6\nafter:\n-1 0 1\n2 3 4\n')
-    check(exe(12,'assignment02_03_stack'),'stack capacity and LIFO', '+ 1 + 2 + 3 + 4 + 5 + 6 - - - - - - q', 'pushed\n'*5+'full\n'+''.join(f'popped={i}\n' for i in range(5,0,-1))+'empty\n')
+    check(exe(12,'assignment02_03_stack'),'stack capacity and LIFO', '+ 1 + 2 + 3 + 4 - - - - q', 'pushed\n'*3+'full\n'+''.join(f'popped={i}\n' for i in range(3,0,-1))+'empty\n')
+    check(exe(12,'assignment02_03_stack'),'stack refill and negative value', '- + -1 - + 9 - q', 'empty\npushed\npopped=-1\npushed\npopped=9\n')
+    for month in range(1,13):
+        check(exe(7,'assignment03_ex07_quarter'),f'quarter month {month}',str(month),f'month={month} quarter={(month-1)//3+1}\n')
+    for month in (0,13,-1):
+        check(exe(7,'assignment03_ex07_quarter'),f'invalid month {month}',str(month),code=1)
+    for boundary,rate,next_rate in [(12000000,6,15),(46000000,15,24),(88000000,24,35),(150000000,35,38),(300000000,38,40),(500000000,40,42)]:
+        for income,expected_rate in [(boundary,rate),(boundary+1,next_rate)]:
+            check(exe(7,'assignment03_ex06_tax_bracket'),f'textbook tax boundary {income}',str(income),f'income={income} KRW rate={expected_rate}%\n')
+    check(exe(7,'assignment03_ex06_tax_bracket'),'negative income','-1',code=1)
+    for name in ('assignment02_ex07_simple_interest','assignment03_ex08_compound_interest'):
+        check(exe(6,name),name+' zero years','0','total=1000000.00 KRW\n')
+        check(exe(6,name),name+' one year','1','total=1045000.00 KRW\n')
+        check(exe(6,name),name+' negative years','-1',code=1)
+    for name in ('assignment03_ex05_areas','assignment03_ex07_average'):
+        check(exe(4,name),name+' nonfinite input','nan 1',code=1)
+    check(exe(4,'assignment03_ex04_codes'),'question mark is valid','?','? 077 63 0x3f\n')
+    harness=build/('function_contracts'+('.exe' if os.name=='nt' else ''))
+    subprocess.run(compiler+['-std=c11','-Wall','-Wextra','-Wpedantic','-Werror','tests/function_contracts.c','-o',str(harness)],cwd=ROOT,check=True,capture_output=True,timeout=180)
+    check(harness,'copy, recursion, minimum, stack and comparison function contracts','','')
     report={'platform':platform.platform(),'compiler':subprocess.run(compiler+['--version'],capture_output=True,text=True,check=True).stdout.splitlines()[0], 'program_count':len(programs),'case_count':len(results),'cases':results,'source_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(ROOT.glob('week*/*')) if p.suffix in ('.c','.h')}}
     if args.report:
         (ROOT/'results').mkdir(exist_ok=True)
