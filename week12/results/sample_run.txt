@@ -21,25 +21,15 @@ higher
 higher
 higher
 higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
-higher
 correct
 
 $ week12_assignment02_03_stack.exe
-stdin: + 10 + 20 - - - q
+stdin: + 3 + 5 + 9 + 1 - - - - q
 pushed
 pushed
-popped=20
-popped=10
+pushed
+full
+popped=9
+popped=5
+popped=3
 empty
