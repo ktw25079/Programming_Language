@@ -14,3 +14,24 @@ transpose:
 0 1 2 3 4
 1 2 3 4 5
 2 3 4 5 6
+
+$ week09_assignment03_ex10_student_totals.exe
+stdin: (none)
+student1 total=370 average=92.50
+student2 total=323 average=80.75
+student3 total=300 average=75.00
+student4 total=349 average=87.25
+student5 total=298 average=74.50
+
+$ week09_assignment04_ex12_matrix_arithmetic.exe
+stdin: (none)
+sum:
+124 114 177
+120 139 62
+101 137 105
+90 137 133
+difference:
+-32 44 -21
+-50 -25 -6
+-15 -1 47
+22 19 63
