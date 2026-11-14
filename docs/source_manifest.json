@@ -1,0 +1,142 @@
+[
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-00-Introduction.pdf",
+    "sha256": "e39d35c2b509c2f0a7c18d3311f398ef1f993c274137961f0b69af11a19f903f"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-01-FirstStep-1.pdf",
+    "sha256": "c2e64e95d0af0e994c78c8bae49b04f70972e6fbfb4683dc5ad9bf13ed18711e"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-02-FirstStep-2.pdf",
+    "sha256": "1f39920469b7728d63147ac4a34ef1574e5d13950b8529e44a3bf4cc52f70632"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-03-FirstStep-3.pdf",
+    "sha256": "ec61790be1f89cc9c3d72dda3f54543bf08dba92562c406453cfde09c54aaff3"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-04-VarType.pdf",
+    "sha256": "85f2fcf72ecdff950fd2eb1773047ad8a4a2b034edbcad7ee1c5c4f3f688db56"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-05-InOut.pdf",
+    "sha256": "93811c204e22a348d27a40e71b5d85b9849de501173eb2eb6ffdbd8f29392d91"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-06-Operator.pdf",
+    "sha256": "98a9e0798ee00a5f6a22e836665fed039ead29934f486a9a2ec80c21ef66d5de"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-07-If.pdf",
+    "sha256": "4a1be8d49afa6f080ba2b87dafe26a064f22cad73ab3d0f77e7544c0add4068b"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-08-For.pdf",
+    "sha256": "342aea5d598075def5e0ce237a4dbc398d5f3e5db43452c02263d73aad62b733"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-09-Array-1.pdf",
+    "sha256": "202c5de82b2fa59900324368b678987bdc3abd7456e7138bb068e06afc06d9e8"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-10-Function-1.pdf",
+    "sha256": "2993f998b03370e388d645699a9ba779e792254e87d8e37771100bf1305ce460"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-11-Function-2.pdf",
+    "sha256": "bfafc19d0dcea37fca82263712b3e3e750deb15e2449b6b0b33da0cf3407019b"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-12-VarScope.pdf",
+    "sha256": "d7bae0800efb0fc99998a3b5f71c5986f9859025bf3d2bcd8fb5566fd597b39b"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-13-Pointer-1.pdf",
+    "sha256": "46368b6633fe6bfee9724e63113d18eba5c39db44cfae53076ce6cb59eaac019"
+  },
+  {
+    "category": "theory",
+    "filename": "프로그래밍언어-14-Pointer-2.pdf",
+    "sha256": "7cf7234b18dcd18439d12fcf61e80aadb68f514981d9252c388fc1fec1cc842d"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_1.pdf",
+    "sha256": "c17886835a04225b6d3a97d2aab5840c29c9eb43e3ca2f1194c4e2fe3199246c"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_10.pdf",
+    "sha256": "6564c7cae3624384f4b73f8a2de26c837b2e30155e9b28b6063c8e529013bd31"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_11.pdf",
+    "sha256": "07ab20a59b3612166d49078570fee258821a613db075e0801b8d0cff11e61799"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_12.pdf",
+    "sha256": "b43f92abc7bb2c65daa4cb2d059304e0f561c5e171af210a5700eb9ca844c66d"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_13.pdf",
+    "sha256": "05ff1a3d7d0c16e728842d040365140df6d9b32681dd68e0062c2560d7c963a2"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_2.pdf",
+    "sha256": "e36dcaafc175c4f02f1974b18d1ee5c7001857e5ee9932507147e65bc9c5be15"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_3.pdf",
+    "sha256": "6e029f587e0d059c39944ae7f35cba7a98cfba660e4f087fbc6fe94507ba0993"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_4.pdf",
+    "sha256": "5f4c6fd035e2ed0f0e3ce4da30fd2a68ef90081dab075aeca443cd7816d0b6d3"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_5.pdf",
+    "sha256": "776818da485efe310c97ae8422e79f5dbdf8d0b9ea7f61b4bcd111ae765c8561"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_6.pdf",
+    "sha256": "c557c70ae136709d617771397d39dbcf087784e78e0858e33ebb65ee43da0488"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_7.pdf",
+    "sha256": "7c7bc793154ba265eb93dd5e1052d28f4a83d3985d6fb7dfe9c0d1e00b3b0461"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_8.pdf",
+    "sha256": "1ba33e3fe66d1fcaca2a7d8895e6437599f5624617c642a86b6f321879fcf326"
+  },
+  {
+    "category": "labs",
+    "filename": "프로그래밍실습_9.pdf",
+    "sha256": "8c3fea15276276cdca135d87e1422b5995907b3aab6c2337ca23ec9156b81327"
+  }
+]
