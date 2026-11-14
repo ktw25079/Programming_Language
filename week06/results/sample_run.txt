@@ -1,0 +1,8 @@
+$ week06_assignment01_logic.exe
+stdin: 100 55
+0
+1
+1
+0
+1
+1
