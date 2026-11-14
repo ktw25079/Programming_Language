@@ -4,4 +4,9 @@ stdin: (none)
 
 $ week13_assignment02_minimum.exe
 stdin: (none)
-minimum=-3 index=1
+minimum=1.5 index=2
+
+$ week13_assignment03_ex04_pointer_halves.exe
+stdin: (none)
+255
+255 15
