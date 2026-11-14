@@ -1,0 +1,7 @@
+$ week07_assignment01_case.exe
+stdin: A
+A(65) a(97)
+
+$ week07_assignment02_vowel.exe
+stdin: E
+vowel
