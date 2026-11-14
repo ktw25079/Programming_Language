@@ -1,9 +1,7 @@
-#include <stdlib.h>
-#include <time.h>
 #include "guess.h"
-int target;
-void initialize_game(void)
+int testNum(int input)
 {
-    srand((unsigned)time(NULL));
-    target=rand()%100+1;
+    if (input>guess) return -1;
+    if (input<guess) return 1;
+    return 0;
 }
