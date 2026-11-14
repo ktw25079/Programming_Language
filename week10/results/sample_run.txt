@@ -13,4 +13,6 @@ power=-27
 
 $ week10_assignment04_copy.exe
 stdin: (none)
-3 -1 4 1 5
+a: 4 7 9 3 6
+b before: 10 20 30 40 50 60
+b after: 4 7 9 3 6 60
