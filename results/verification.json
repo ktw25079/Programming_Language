@@ -1,0 +1,481 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "compiler": "clang version 19.1.7 (https://github.com/ziglang/zig-bootstrap de1b01a8c1dddf75a560123ac1c2ab182b4830da)",
+  "program_count": 28,
+  "case_count": 110,
+  "cases": [
+    {
+      "case": "week01/hello.c",
+      "passed": true
+    },
+    {
+      "case": "week02/assignment01_alphabet.c",
+      "passed": true
+    },
+    {
+      "case": "week02/assignment02_arithmetic.c",
+      "passed": true
+    },
+    {
+      "case": "week03/assignment01_circle.c",
+      "passed": true
+    },
+    {
+      "case": "week04/assignment01_temperature.c",
+      "passed": true
+    },
+    {
+      "case": "week04/assignment01_temperature.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week04/assignment02_time.c",
+      "passed": true
+    },
+    {
+      "case": "week04/assignment02_time.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment01_calculator.c",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment01_calculator.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment02_expressions.c",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment02_expressions.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment03_maximum.c",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment03_maximum.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment04_multiple.c",
+      "passed": true
+    },
+    {
+      "case": "week05/assignment04_multiple.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week06/assignment01_logic.c",
+      "passed": true
+    },
+    {
+      "case": "week06/assignment01_logic.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week07/assignment01_case.c",
+      "passed": true
+    },
+    {
+      "case": "week07/assignment01_case.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week07/assignment02_vowel.c",
+      "passed": true
+    },
+    {
+      "case": "week07/assignment02_vowel.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week08/assignment01_triangle.c",
+      "passed": true
+    },
+    {
+      "case": "week08/assignment02_table.c",
+      "passed": true
+    },
+    {
+      "case": "week08/assignment02_table.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week08/assignment03_powers.c",
+      "passed": true
+    },
+    {
+      "case": "week08/assignment03_powers.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week09/assignment01_grades.c",
+      "passed": true
+    },
+    {
+      "case": "week09/assignment01_grades.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week09/assignment02_transpose.c",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment01_seconds.c",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment01_seconds.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment02_grades.c",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment02_grades.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment03_power.c",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment03_power.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week10/assignment04_copy.c",
+      "passed": true
+    },
+    {
+      "case": "week11/assignment01_matrix.c",
+      "passed": true
+    },
+    {
+      "case": "week11/assignment01_matrix.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week11/assignment02_guess.c",
+      "passed": true
+    },
+    {
+      "case": "week11/assignment02_guess.c: hint consistency and reachable target",
+      "passed": true
+    },
+    {
+      "case": "week11/assignment02_guess.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week12/assignment01_guess.c",
+      "passed": true
+    },
+    {
+      "case": "week12/assignment01_guess.c: hint consistency and reachable target",
+      "passed": true
+    },
+    {
+      "case": "week12/assignment01_guess.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week12/assignment02_03_stack.c",
+      "passed": true
+    },
+    {
+      "case": "week12/assignment02_03_stack.c: invalid input",
+      "passed": true
+    },
+    {
+      "case": "week13/assignment01_reverse.c",
+      "passed": true
+    },
+    {
+      "case": "week13/assignment02_minimum.c",
+      "passed": true
+    },
+    {
+      "case": "absolute zero",
+      "passed": true
+    },
+    {
+      "case": "below absolute zero",
+      "passed": true
+    },
+    {
+      "case": "maximum time",
+      "passed": true
+    },
+    {
+      "case": "invalid minute",
+      "passed": true
+    },
+    {
+      "case": "zero divisor",
+      "passed": true
+    },
+    {
+      "case": "undefined expressions",
+      "passed": true
+    },
+    {
+      "case": "equal maxima",
+      "passed": true
+    },
+    {
+      "case": "INT_MIN divisible by minus one",
+      "passed": true
+    },
+    {
+      "case": "not multiple",
+      "passed": true
+    },
+    {
+      "case": "zero base",
+      "passed": true
+    },
+    {
+      "case": "full int range",
+      "passed": true
+    },
+    {
+      "case": "both zero",
+      "passed": true
+    },
+    {
+      "case": "lowercase z",
+      "passed": true
+    },
+    {
+      "case": "vowel a",
+      "passed": true
+    },
+    {
+      "case": "vowel A",
+      "passed": true
+    },
+    {
+      "case": "vowel e",
+      "passed": true
+    },
+    {
+      "case": "vowel E",
+      "passed": true
+    },
+    {
+      "case": "vowel i",
+      "passed": true
+    },
+    {
+      "case": "vowel I",
+      "passed": true
+    },
+    {
+      "case": "vowel o",
+      "passed": true
+    },
+    {
+      "case": "vowel O",
+      "passed": true
+    },
+    {
+      "case": "vowel u",
+      "passed": true
+    },
+    {
+      "case": "vowel U",
+      "passed": true
+    },
+    {
+      "case": "consonant",
+      "passed": true
+    },
+    {
+      "case": "continue and stop",
+      "passed": true
+    },
+    {
+      "case": "invalid table",
+      "passed": true
+    },
+    {
+      "case": "negative limit",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 0",
+      "passed": true
+    },
+    {
+      "case": "function boundary 0",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 59",
+      "passed": true
+    },
+    {
+      "case": "function boundary 59",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 60",
+      "passed": true
+    },
+    {
+      "case": "function boundary 60",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 69",
+      "passed": true
+    },
+    {
+      "case": "function boundary 69",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 70",
+      "passed": true
+    },
+    {
+      "case": "function boundary 70",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 79",
+      "passed": true
+    },
+    {
+      "case": "function boundary 79",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 80",
+      "passed": true
+    },
+    {
+      "case": "function boundary 80",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 89",
+      "passed": true
+    },
+    {
+      "case": "function boundary 89",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 90",
+      "passed": true
+    },
+    {
+      "case": "function boundary 90",
+      "passed": true
+    },
+    {
+      "case": "five-subject boundary 100",
+      "passed": true
+    },
+    {
+      "case": "function boundary 100",
+      "passed": true
+    },
+    {
+      "case": "fraction below A",
+      "passed": true
+    },
+    {
+      "case": "out of range score",
+      "passed": true
+    },
+    {
+      "case": "immediate sentinel",
+      "passed": true
+    },
+    {
+      "case": "repeated time conversion",
+      "passed": true
+    },
+    {
+      "case": "continue grades",
+      "passed": true
+    },
+    {
+      "case": "power 3 4",
+      "passed": true
+    },
+    {
+      "case": "power 3 0",
+      "passed": true
+    },
+    {
+      "case": "power 0 0",
+      "passed": true
+    },
+    {
+      "case": "power 0 5",
+      "passed": true
+    },
+    {
+      "case": "power -2 30",
+      "passed": true
+    },
+    {
+      "case": "negative exponent",
+      "passed": true
+    },
+    {
+      "case": "overflow",
+      "passed": true
+    },
+    {
+      "case": "negative increment",
+      "passed": true
+    },
+    {
+      "case": "stack capacity and LIFO",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "week01/hello.c": "e51a61c69e222ce217c23ae588101ffbcab6a1514d9c1c098fe194bde7130e13",
+    "week02/assignment01_alphabet.c": "590b43ecac5559254417ef28c32b12a4f5150fc7e0cc71467f10d9342560a82f",
+    "week02/assignment02_arithmetic.c": "a7d95add969f9ae42568c37ef0c29d3fd5bdf81e27e33ee3a7cea19c00ddb514",
+    "week03/assignment01_circle.c": "cd7b3c0d1e548d2a16a5fed7bfc6e8d68bb3fcbcf899415e26811bec7f3ea410",
+    "week04/assignment01_temperature.c": "41803070a532c709eb9cd609f1ce468f4ab81ed116e2c8176072bf8f8ca12fe7",
+    "week04/assignment02_time.c": "235a196805431f53e04dee8a64491dcb497e148b48690a68c469d1b186b7f340",
+    "week04/time_units.h": "54dcdee8c30af9407ad0f0e5c1a80c3909fb68dc1f975a2e33c581e6ecb67ed8",
+    "week05/assignment01_calculator.c": "a981916d1c31838e9f6c8254672de9da1738282f272cd6421051a94bbb788869",
+    "week05/assignment02_expressions.c": "95cb58883d142653e0204a0fd18a2c3db0546126e8288d0fb1c78e44ec7095c1",
+    "week05/assignment03_maximum.c": "0184fe26e585624c47d0526eb3bded6fd81f74f331ddf7deb3cddb3649b133c2",
+    "week05/assignment04_multiple.c": "054987c2a16c8cd829212d30153e2276d3865887de7714e5c57f53bf9e0c4142",
+    "week06/assignment01_logic.c": "e3986edf3141ba670918be66b6024f8626f78b624e822f558e8c8cf55964a795",
+    "week07/assignment01_case.c": "9a24147a2143bc7c7152d0914798862dc95c0496fe8080e7dc5236a590d00026",
+    "week07/assignment02_vowel.c": "a12f054e93fb2ee795529d56d1e8d376c269acec4ddff1f19debf587389c22f8",
+    "week08/assignment01_triangle.c": "d9d348fb6422dcd89d5770ceff22cad37aa1f09c940612e46ff52107f43484b5",
+    "week08/assignment02_table.c": "eda9feb0ea5b60600b53e64be2b3de398786ac7ab0fe3baac078944666729af7",
+    "week08/assignment03_powers.c": "3d960236e17432ff60b3bd1f5084930366db5e5d97fd4814a2daece2d4d0cb04",
+    "week09/assignment01_grades.c": "a502e2edbf1b126d60fa5ebec102f4ae107d65f85726c697dc830c099095b1cf",
+    "week09/assignment02_transpose.c": "7991efd6bdcaa07173afc1498dec3581b34bb77edbb632ea2595a77bbc54bd83",
+    "week10/assignment01_seconds.c": "4d575db3a25eea9ad506beb9dc490caca7be29c2e9d71012f2b46fd9296ac5cd",
+    "week10/assignment02_grades.c": "85b248f1b7bfcaf68b752decb2c3a94bdd409fab47295da055a25dc859b7c2d4",
+    "week10/assignment03_power.c": "b424a01dc904a1ae0b72a28ab4cc1d53d6d75002e9d1ad68fd71f3d672b8cd1e",
+    "week10/assignment04_copy.c": "cb8689457183784d63c41d4899293c7d633b75a694f49684d323a9f228eb3495",
+    "week11/assignment01_matrix.c": "dd9d3316008c3d7717522fa1705be854f0ac3005c5905eff27ae02999af076ad",
+    "week11/assignment02_guess.c": "72f96f845e5b70d18edd07cc9c8aaf289e2ffe97193604ad6bc36202f7db6453",
+    "week12/assignment01_guess.c": "aae43c39a13d716675130c034b4bf0fbafcfa661223b5a8f202ae481699f502d",
+    "week12/assignment02_03_stack.c": "054cb98d4d18d5a3672d83891031da43b98e269482a75ba7cb3abd1878c499b3",
+    "week12/guess.c": "aeddc18ded1a2a3bde2d332fce853c5ac48d0e15ef98d9a7057bb8c7d65726b8",
+    "week12/guess.h": "0ca914ca48f3d3ca9ef5c0fbd9e2ec403778c829e805e789e1e135e73584a21e",
+    "week13/assignment01_reverse.c": "28a1f1f1b5f00e2a0ae6789fc4c2ab59f63696d7d24d86f9e281fa8b36a9faa9",
+    "week13/assignment02_minimum.c": "1215b93494111b0458296be6e9b433f1dad2ff17e83899c2fd00d3dccf0c5ed2"
+  }
+}
