@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <stddef.h>
-static const int *find_minimum(const int *a,size_t count)
+const double *find_minimum(double a[], size_t size)
 {
-    const int *minimum=a;
-    for (size_t i=1;i<count;++i) if (*(a+i)<*minimum) minimum=a+i;
+    double *minimum=a;
+    for (double *p=a+1;p<a+size;++p) {
+        if (*p<*minimum) minimum=p;
+    }
     return minimum;
 }
 int main(void)
 {
-    const int a[]={8,-3,5,-3,9};
-    const int *minimum=find_minimum(a,sizeof(a)/sizeof(a[0]));
-    printf("minimum=%d index=%td\n",*minimum,minimum-a);
+    double a[]={8.0,3.2,1.5,7.1,1.5};
+    size_t size=sizeof(a)/sizeof(a[0]);
+    const double *minimum=find_minimum(a,size);
+    printf("minimum=%.1f index=%td\n",*minimum,minimum-a);
     return 0;
 }
