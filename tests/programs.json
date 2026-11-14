@@ -1,0 +1,312 @@
+[
+  {
+    "week": 1,
+    "name": "hello",
+    "title": "실습 1 · 첫 프로그램",
+    "page": 2,
+    "path": "week01/hello.c",
+    "stdin": "",
+    "stdout": "Hello, C!\n",
+    "note": "Visual Studio 프로젝트 생성 연습에 대응하는 새 예제. 교재 과제의 대체 풀이가 아니다.",
+    "extra": []
+  },
+  {
+    "week": 2,
+    "name": "assignment01_alphabet",
+    "title": "과제 1 · 문자 하나로 A–Z 출력",
+    "page": 7,
+    "path": "week02/assignment01_alphabet.c",
+    "stdin": "",
+    "stdout": "A 65\nB 66\nC 67\nD 68\nE 69\nF 70\nG 71\nH 72\nI 73\nJ 74\nK 75\nL 76\nM 77\nN 78\nO 79\nP 80\nQ 81\nR 82\nS 83\nT 84\nU 85\nV 86\nW 87\nX 88\nY 89\nZ 90\n",
+    "note": "ASCII 호환 실행 환경을 사용한다.",
+    "extra": []
+  },
+  {
+    "week": 2,
+    "name": "assignment02_arithmetic",
+    "title": "과제 2 · 실수 연산과 0 분모",
+    "page": 8,
+    "path": "week02/assignment02_arithmetic.c",
+    "stdin": "",
+    "stdout": "sum=15.000 difference=10.000 product=31.250\nquotient=5.000\nsum=8.000 difference=8.000 product=0.000\nquotient=undefined (division by zero)\n",
+    "note": "초기값은 예제로 정했다. 0으로 나누는 연산은 실행 전 차단한다.",
+    "extra": []
+  },
+  {
+    "week": 3,
+    "name": "assignment01_circle",
+    "title": "과제 1 · 상수와 원의 둘레·넓이",
+    "page": 7,
+    "path": "week03/assignment01_circle.c",
+    "stdin": "",
+    "stdout": "radius=2.400 circumference=15.079642 area=18.095570\n",
+    "note": "반지름은 예제값 2.4. 길이 단위가 지정되지 않아 둘레·넓이는 같은 길이 단위와 그 제곱이다.",
+    "extra": []
+  },
+  {
+    "week": 4,
+    "name": "assignment01_temperature",
+    "title": "과제 1 · 온도 변환 매크로",
+    "page": 14,
+    "path": "week04/assignment01_temperature.c",
+    "stdin": "100\n",
+    "stdout": "kelvin=373.150 fahrenheit=212.000\n",
+    "note": "섭씨 −273.15~1,000,000 범위를 허용한다.",
+    "extra": []
+  },
+  {
+    "week": 4,
+    "name": "assignment02_time",
+    "title": "과제 2 · 헤더와 시간 변환",
+    "page": 15,
+    "path": "week04/assignment02_time.c",
+    "stdin": "1 2 3\n",
+    "stdout": "seconds=3723\n",
+    "note": "32비트 int 기준 오버플로를 피하도록 시 0~596522, 분·초 0~59로 제한한다.",
+    "extra": []
+  },
+  {
+    "week": 5,
+    "name": "assignment01_calculator",
+    "title": "과제 1 · 입력한 두 실수의 사칙연산",
+    "page": 9,
+    "path": "week05/assignment01_calculator.c",
+    "stdin": "12.5 2.5\n",
+    "stdout": "sum=15.000 difference=10.000 product=31.250\nquotient=5.000\n",
+    "note": "유한 실수, 절댓값 1e100 이하. 정의되지 않는 몫은 undefined로 표시한다.",
+    "extra": []
+  },
+  {
+    "week": 5,
+    "name": "assignment02_expressions",
+    "title": "과제 2 · 일곱 수식",
+    "page": 10,
+    "path": "week05/assignment02_expressions.c",
+    "stdin": "1 2 2 1 212 100 1 -3 2\n",
+    "stdout": "1=27.000\n2=44.000\n3=-3.000\n4=100.000\n5=212.000\n6=-0.250\n7=2.000\n",
+    "note": "입력 순서: a b x y F C 이차식a 이차식b 이차식c. 각 값의 절댓값 ≤ 1,000,000. 일곱 식은 원본 표에서 확인했으며 마지막 식의 분모는 전체 2a이다.",
+    "extra": []
+  },
+  {
+    "week": 5,
+    "name": "assignment03_maximum",
+    "title": "과제 3 · 세 정수의 최댓값",
+    "page": 12,
+    "path": "week05/assignment03_maximum.c",
+    "stdin": "-7 -2 -9\n",
+    "stdout": "max=-2\n",
+    "note": "",
+    "extra": []
+  },
+  {
+    "week": 5,
+    "name": "assignment04_multiple",
+    "title": "과제 4 · 배수 판별",
+    "page": 13,
+    "path": "week05/assignment04_multiple.c",
+    "stdin": "5 30\n",
+    "stdout": "multiple=yes\n",
+    "note": "본문의 “y가 x의 배수”를 기준으로 판별한다. 0인 기준값은 오류 처리한다.",
+    "extra": []
+  },
+  {
+    "week": 6,
+    "name": "assignment01_logic",
+    "title": "과제 1 · 논리식 여섯 개",
+    "page": 9,
+    "path": "week06/assignment01_logic.c",
+    "stdin": "100 55\n",
+    "stdout": "0\n1\n1\n0\n1\n1\n",
+    "note": "32비트 int 두 값의 합·차는 long long으로 계산해 signed overflow를 방지한다.",
+    "extra": []
+  },
+  {
+    "week": 7,
+    "name": "assignment01_case",
+    "title": "과제 1 · 알파벳 대소문자 변환",
+    "page": 7,
+    "path": "week07/assignment01_case.c",
+    "stdin": "A\n",
+    "stdout": "A(65) a(97)\n",
+    "note": "ASCII 영문자 한 글자.",
+    "extra": []
+  },
+  {
+    "week": 7,
+    "name": "assignment02_vowel",
+    "title": "과제 2 · 자음과 모음",
+    "page": 8,
+    "path": "week07/assignment02_vowel.c",
+    "stdin": "E\n",
+    "stdout": "vowel\n",
+    "note": "",
+    "extra": []
+  },
+  {
+    "week": 8,
+    "name": "assignment01_triangle",
+    "title": "과제 1 · 알파벳 삼각형",
+    "page": 7,
+    "path": "week08/assignment01_triangle.c",
+    "stdin": "",
+    "stdout": "A\nAB\nABC\nABCD\nABCDE\nABCDEF\nABCDEFG\nABCDEFGH\nABCDEFGHI\nABCDEFGHIJ\nABCDEFGHIJK\nABCDEFGHIJKL\nABCDEFGHIJKLM\nABCDEFGHIJKLMN\nABCDEFGHIJKLMNO\nABCDEFGHIJKLMNOP\nABCDEFGHIJKLMNOPQ\nABCDEFGHIJKLMNOPQR\nABCDEFGHIJKLMNOPQRS\nABCDEFGHIJKLMNOPQRST\nABCDEFGHIJKLMNOPQRSTU\nABCDEFGHIJKLMNOPQRSTUV\nABCDEFGHIJKLMNOPQRSTUVW\nABCDEFGHIJKLMNOPQRSTUVWX\nABCDEFGHIJKLMNOPQRSTUVWXY\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n",
+    "note": "",
+    "extra": []
+  },
+  {
+    "week": 8,
+    "name": "assignment02_table",
+    "title": "과제 2 · 반복하는 구구단",
+    "page": 8,
+    "path": "week08/assignment02_table.c",
+    "stdin": "2 0\n",
+    "stdout": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n",
+    "note": "입력: 단(2~9), 계속 여부(1/0), 반복 시 다음 단.",
+    "extra": []
+  },
+  {
+    "week": 8,
+    "name": "assignment03_powers",
+    "title": "과제 3 · 제곱·세제곱 표",
+    "page": 9,
+    "path": "week08/assignment03_powers.c",
+    "stdin": "3\n",
+    "stdout": "1 1 1\n2 4 8\n3 9 27\n",
+    "note": "출력량과 연산 범위를 고려하여 n=1~10000. 매크로 인자에 증감 연산을 넣지 않는다.",
+    "extra": []
+  },
+  {
+    "week": 9,
+    "name": "assignment01_grades",
+    "title": "과제 1 · 다섯 과목 평균과 학점",
+    "page": 7,
+    "path": "week09/assignment01_grades.c",
+    "stdin": "90 80 100 70 60\n",
+    "stdout": "average=80.00 grade=B\n",
+    "note": "과목별 점수 0~100. 학점은 반올림 전 평균으로 판정한다.",
+    "extra": []
+  },
+  {
+    "week": 9,
+    "name": "assignment02_transpose",
+    "title": "과제 2 · 5×3 행렬의 전치",
+    "page": 8,
+    "path": "week09/assignment02_transpose.c",
+    "stdin": "",
+    "stdout": "original:\n0 1 2\n1 2 3\n2 3 4\n3 4 5\n4 5 6\ntranspose:\n0 1 2 3 4\n1 2 3 4 5\n2 3 4 5 6\n",
+    "note": "",
+    "extra": []
+  },
+  {
+    "week": 10,
+    "name": "assignment01_seconds",
+    "title": "과제 1 · 시간 변환 함수와 종료 조건",
+    "page": 8,
+    "path": "week10/assignment01_seconds.c",
+    "stdin": "1 2 3\n0 0 0\n",
+    "stdout": "seconds=3723\n",
+    "note": "시 0~596522, 분·초 0~59. 0 0 0은 출력 없이 종료한다.",
+    "extra": []
+  },
+  {
+    "week": 10,
+    "name": "assignment02_grades",
+    "title": "과제 2 · 평균·학점 함수",
+    "page": 9,
+    "path": "week10/assignment02_grades.c",
+    "stdin": "90 100 80 0\n",
+    "stdout": "average=90.00 grade=A\n",
+    "note": "국어 수학 영어(각 0~100), 계속 여부(1/0) 순서로 입력한다.",
+    "extra": []
+  },
+  {
+    "week": 10,
+    "name": "assignment03_power",
+    "title": "과제 3 · 정수 거듭제곱 함수",
+    "page": 10,
+    "path": "week10/assignment03_power.c",
+    "stdin": "-3 3\n",
+    "stdout": "power=-27\n",
+    "note": "x=−100~100, y=0~30 중 int 결과가 표현 가능한 입력. 지수 0은 0^0을 포함해 반복 곱의 항등값 1로 정했다.",
+    "extra": []
+  },
+  {
+    "week": 10,
+    "name": "assignment04_copy",
+    "title": "과제 4 · 1차원 배열 복사 함수",
+    "page": 11,
+    "path": "week10/assignment04_copy.c",
+    "stdin": "",
+    "stdout": "3 -1 4 1 5\n",
+    "note": "자료에 있는 주제 요약에 맞춘 구현이다. 교재 p.422 12번의 세부 입출력 조건은 미제공. 배열값과 길이 5는 새 예제이다.",
+    "extra": []
+  },
+  {
+    "week": 11,
+    "name": "assignment01_matrix",
+    "title": "과제 1 · 2차원 배열 증가 함수",
+    "page": 10,
+    "path": "week11/assignment01_matrix.c",
+    "stdin": "2\n",
+    "stdout": "before:\n1 2 3\n4 5 6\nafter:\n3 4 5\n6 7 8\n",
+    "note": "배열 크기·초기값이 지정되지 않아 2×3, 1~6을 사용한다. 증가량 −1,000,000~1,000,000.",
+    "extra": []
+  },
+  {
+    "week": 11,
+    "name": "assignment02_guess",
+    "title": "과제 2 · 난수 알아맞히기",
+    "page": 11,
+    "path": "week11/assignment02_guess.c",
+    "stdin": "",
+    "stdout": null,
+    "note": "1~100 난수. higher는 더 큰 값, lower는 더 작은 값, correct는 정답을 뜻한다. 자동 검사는 1·100과 나머지 후보를 입력한 뒤 정답 위치와 모든 대소 힌트의 일관성을 확인한다.",
+    "extra": []
+  },
+  {
+    "week": 12,
+    "name": "assignment01_guess",
+    "title": "과제 1 · 두 파일과 전역변수",
+    "page": 5,
+    "path": "week12/assignment01_guess.c",
+    "stdin": "",
+    "stdout": null,
+    "note": "guess.c에서 전역 target을 정의하고 main에서 지역 input과 비교한다. 교재의 세부 형식 대신 자료의 요약 요구사항을 구현했다.",
+    "extra": [
+      "week12/guess.c"
+    ]
+  },
+  {
+    "week": 12,
+    "name": "assignment02_03_stack",
+    "title": "과제 2·3 · push와 pop",
+    "page": 6,
+    "path": "week12/assignment02_03_stack.c",
+    "stdin": "+ 10 + 20 - - - q\n",
+    "stdout": "pushed\npushed\npopped=20\npopped=10\nempty\n",
+    "note": "PDF p.6–7의 스택 주제를 구현했다. 교재 세부 조건은 미제공. 용량 5, + 정수: push, -: pop, q: 종료라는 인터페이스를 정했다.",
+    "extra": []
+  },
+  {
+    "week": 13,
+    "name": "assignment01_reverse",
+    "title": "과제 1 · 포인터로 배열 역순 출력",
+    "page": 10,
+    "path": "week13/assignment01_reverse.c",
+    "stdin": "",
+    "stdout": "9 8 7 6 5 4 3 2 1 0\n",
+    "note": "",
+    "extra": []
+  },
+  {
+    "week": 13,
+    "name": "assignment02_minimum",
+    "title": "과제 2 · 최솟값과 첨자",
+    "page": 11,
+    "path": "week13/assignment02_minimum.c",
+    "stdin": "",
+    "stdout": "minimum=-3 index=1\n",
+    "note": "교재 세부 조건은 미제공. 새 예제 배열에서 포인터로 최솟값을 찾고 0 기반 첨자를 출력한다. 동률은 첫 번째 위치를 선택한다.",
+    "extra": []
+  }
+]
