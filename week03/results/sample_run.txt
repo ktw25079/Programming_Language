@@ -1,0 +1,3 @@
+$ week03_assignment01_circle.exe
+stdin: (none)
+radius=2.400 circumference=15.079642 area=18.095570
