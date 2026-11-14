@@ -1,6 +1,42 @@
 [
   {
     "week": 1,
+    "name": "assignment02_ex02_languages",
+    "title": "과제 2-02 · printf 한 번으로 여러 줄 출력",
+    "page": 100,
+    "path": "week01/assignment02_ex02_languages.c",
+    "stdin": "",
+    "stdout": "C\nPascal\nJava\nPython\nKotlin\n",
+    "note": "교재 프로그래밍 연습 02번. printf 호출 한 번과 줄바꿈 이스케이프를 사용한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 1,
+    "name": "assignment02_ex04_creators",
+    "title": "과제 2-04 · puts 한 번으로 여러 줄 출력",
+    "page": 100,
+    "path": "week01/assignment02_ex04_creators.c",
+    "stdin": "",
+    "stdout": "데니스 리치\n제임스 고슬링\n귀도 반 로섬\n",
+    "note": "교재 프로그래밍 연습 04번. puts가 마지막 줄바꿈을 추가한다. 소스·출력은 UTF-8이다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 1,
+    "name": "assignment02_ex06_stars",
+    "title": "과제 2-06 · 네 줄 별 출력",
+    "page": 101,
+    "path": "week01/assignment02_ex06_stars.c",
+    "stdin": "",
+    "stdout": "*\n**\n***\n****\n",
+    "note": "교재 프로그래밍 연습 06번. 입출력 기초 단계에 맞춰 반복문 없이 작성한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 1,
     "name": "hello",
     "title": "실습 1 · 첫 프로그램",
     "page": 2,
@@ -33,6 +69,30 @@
     "extra": []
   },
   {
+    "week": 2,
+    "name": "assignment03_ex03_literals",
+    "title": "과제 3-03 · 진법별 정수 상수",
+    "page": 159,
+    "path": "week02/assignment03_ex03_literals.c",
+    "stdin": "",
+    "stdout": "8 8 8\n9 9 9\n10 10 10\n11 11 11\n12 12 12\n13 13 13\n14 14 14\n15 15 15\n",
+    "note": "교재 프로그래밍 연습 03번. 요구한 8개 출력 문장으로 10진·8진·16진 상수의 같은 값을 확인한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 2,
+    "name": "assignment03_ex10_characters",
+    "title": "과제 3-10 · 문자 덧셈과 뺄셈",
+    "page": 161,
+    "path": "week02/assignment03_ex10_characters.c",
+    "stdin": "",
+    "stdout": "C F R P\n",
+    "note": "교재 프로그래밍 연습 10번. ASCII 문자 코드의 산술 연산이다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
     "week": 3,
     "name": "assignment01_circle",
     "title": "과제 1 · 상수와 원의 둘레·넓이",
@@ -42,6 +102,54 @@
     "stdout": "radius=2.400 circumference=15.079642 area=18.095570\n",
     "note": "반지름은 예제값 2.4. 길이 단위가 지정되지 않아 둘레·넓이는 같은 길이 단위와 그 제곱이다.",
     "extra": []
+  },
+  {
+    "week": 3,
+    "name": "assignment02_ex07_octal",
+    "title": "과제 2-07 · 8진수 코드의 문자",
+    "page": 161,
+    "path": "week03/assignment02_ex07_octal.c",
+    "stdin": "",
+    "stdout": "! \" # $ %\n",
+    "note": "교재 프로그래밍 연습 07번. ASCII 8진수 041~045를 문자로 출력한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 3,
+    "name": "assignment02_ex08_area",
+    "title": "과제 2-08 · 평에서 제곱미터로",
+    "page": 161,
+    "path": "week03/assignment02_ex08_area.c",
+    "stdin": "",
+    "stdout": "18 pyeong = 59.504 m^2\n25 pyeong = 82.645 m^2\n",
+    "note": "교재 프로그래밍 연습 08번. const 환산값 3.305785 m²/평을 사용한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 3,
+    "name": "assignment03_ex09_miles",
+    "title": "과제 3-09 · 킬로미터에서 마일로",
+    "page": 161,
+    "path": "week03/assignment03_ex09_miles.c",
+    "stdin": "",
+    "stdout": "60 km = 37.282 mile\n80 km = 49.710 mile\n100 km = 62.137 mile\n120 km = 74.565 mile\n",
+    "note": "교재 프로그래밍 연습 09번. const 환산값 0.621371 mile/km를 사용한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 3,
+    "name": "assignment03_ex12_exchange",
+    "title": "과제 3-12 · 매크로 환율 계산",
+    "page": 162,
+    "path": "week03/assignment03_ex12_exchange.c",
+    "stdin": "",
+    "stdout": "1000000 KRW = 892.857143 USD\n",
+    "note": "교재 프로그래밍 연습 12번. 문제에서 지정한 고정 환율 1,120원/USD를 사용한다.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 4,
@@ -64,6 +172,43 @@
     "stdout": "seconds=3723\n",
     "note": "32비트 int 기준 오버플로를 피하도록 시 0~596522, 분·초 0~59로 제한한다.",
     "extra": []
+  },
+  {
+    "week": 4,
+    "name": "assignment03_ex04_codes",
+    "title": "과제 3-04 · 문자와 진법별 코드",
+    "page": 199,
+    "path": "week04/assignment03_ex04_codes.c",
+    "stdin": "$\n",
+    "stdout": "$ 044 36 0x24\n",
+    "note": "교재 프로그래밍 연습 04번. 문자 한 바이트를 읽어 문자·8진·10진·16진 순서로 출력한다. 물음표도 유효한 문자이다.",
+    "extra": [],
+    "source": "textbook",
+    "invalid_stdin": ""
+  },
+  {
+    "week": 4,
+    "name": "assignment03_ex05_areas",
+    "title": "과제 3-05 · 면적 출력의 필드 폭과 정렬",
+    "page": 199,
+    "path": "week04/assignment03_ex05_areas.c",
+    "stdin": "3.78 9.45\n",
+    "stdout": "rectangle:       35.721\ntriangle:  17.860      \n",
+    "note": "교재 프로그래밍 연습 05번. 사각형은 %12.3f, 삼각형은 %-12.3f로 출력한다. 양쪽 길이는 0~1,000,000이며 같은 길이 단위로 입력한다. 결과 단위는 그 제곱이다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 4,
+    "name": "assignment03_ex07_average",
+    "title": "과제 3-07 · 두 실수의 합과 평균",
+    "page": 200,
+    "path": "week04/assignment03_ex07_average.c",
+    "stdin": "3.876 25.983\n",
+    "stdout": "sum=29.859000 average=14.929500\n",
+    "note": "교재 프로그래밍 연습 07번. 합과 평균을 모두 실수로 계산한다. 입력 절댓값 ≤ 1e100.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 5,
@@ -121,6 +266,42 @@
     "extra": []
   },
   {
+    "week": 6,
+    "name": "assignment02_ex07_simple_interest",
+    "title": "과제 2 · 단리 만기 금액",
+    "page": 247,
+    "path": "week06/assignment02_ex07_simple_interest.c",
+    "stdin": "5\n",
+    "stdout": "total=1225000.00 KRW\n",
+    "note": "교재 프로그래밍 연습 07번. 원금 100만원, 연 4.5%라는 문제 조건의 단리 계산이다. 예치 기간은 정수 0~1000년.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 6,
+    "name": "assignment03_ex08_compound_interest",
+    "title": "과제 3 · 복리 만기 금액",
+    "page": 248,
+    "path": "week06/assignment03_ex08_compound_interest.c",
+    "stdin": "5\n",
+    "stdout": "total=1246181.94 KRW\n",
+    "note": "교재 프로그래밍 연습 08번. math.h의 pow로 연 4.5% 복리를 계산한다. 예치 기간은 정수 0~1000년.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 6,
+    "name": "assignment04_ex10_quadratic",
+    "title": "과제 4 · 이차방정식의 근과 검산",
+    "page": 248,
+    "path": "week06/assignment04_ex10_quadratic.c",
+    "stdin": "",
+    "stdout": "root1=0.851 residual=0.000\nroot2=-2.351 residual=0.000\n",
+    "note": "교재 프로그래밍 연습 10번. 2x²+3x−4=0의 두 근을 구하고 반올림 전 근을 대입한다. 잔차는 절댓값으로 표시하고 1e−12 이하인지 검사한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
     "week": 7,
     "name": "assignment01_case",
     "title": "과제 1 · 알파벳 대소문자 변환",
@@ -141,6 +322,30 @@
     "stdout": "vowel\n",
     "note": "",
     "extra": []
+  },
+  {
+    "week": 7,
+    "name": "assignment03_ex06_tax_bracket",
+    "title": "과제 3-06 · 교재 세율 구간 판별",
+    "page": 287,
+    "path": "week07/assignment03_ex06_tax_bracket.c",
+    "stdin": "190000000\n",
+    "stdout": "income=190000000 KRW rate=38%\n",
+    "note": "교재 프로그래밍 연습 06번. 교재 표의 세율만 선택하는 조건문 연습이며 실제 세금 계산기가 아니다. 입력은 0~LLONG_MAX의 정수 원 금액.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 7,
+    "name": "assignment03_ex07_quarter",
+    "title": "과제 3-07 · switch로 분기 판별",
+    "page": 287,
+    "path": "week07/assignment03_ex07_quarter.c",
+    "stdin": "7\n",
+    "stdout": "month=7 quarter=3\n",
+    "note": "교재 프로그래밍 연습 07번. 수업자료가 지정한 switch로 구현한다. 1~12월만 허용한다.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 8,
@@ -176,6 +381,18 @@
     "extra": []
   },
   {
+    "week": 8,
+    "name": "assignment04_ex07_sum_limit",
+    "title": "교재 과제 07 · 10000 이하의 최대 누적합",
+    "page": 336,
+    "path": "week08/assignment04_ex07_sum_limit.c",
+    "stdin": "",
+    "stdout": "n=140 sum=9870 next=10011\n",
+    "note": "교재 프로그래밍 연습 07번. 다음 항까지 더했을 때 한도를 넘는지 확인한다. 수업 PDF p.10의 중복된 과제 2는 파일명에서 assignment04로 구분했다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
     "week": 9,
     "name": "assignment01_grades",
     "title": "과제 1 · 다섯 과목 평균과 학점",
@@ -196,6 +413,30 @@
     "stdout": "original:\n0 1 2\n1 2 3\n2 3 4\n3 4 5\n4 5 6\ntranspose:\n0 1 2 3 4\n1 2 3 4 5\n2 3 4 5 6\n",
     "note": "",
     "extra": []
+  },
+  {
+    "week": 9,
+    "name": "assignment03_ex10_student_totals",
+    "title": "과제 3 · 학생별 합계와 평균",
+    "page": 374,
+    "path": "week09/assignment03_ex10_student_totals.c",
+    "stdin": "",
+    "stdout": "student1 total=370 average=92.50\nstudent2 total=323 average=80.75\nstudent3 total=300 average=75.00\nstudent4 total=349 average=87.25\nstudent5 total=298 average=74.50\n",
+    "note": "교재 프로그래밍 연습 10번. 표의 5×4 점수를 그대로 저장했다. student1~5는 교재 표의 위에서 아래 행 순서이다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 9,
+    "name": "assignment04_ex12_matrix_arithmetic",
+    "title": "과제 4 · 4×3 행렬 합과 차",
+    "page": 375,
+    "path": "week09/assignment04_ex12_matrix_arithmetic.c",
+    "stdin": "",
+    "stdout": "sum:\n124 114 177\n120 139 62\n101 137 105\n90 137 133\ndifference:\n-32 44 -21\n-50 -25 -6\n-15 -1 47\n22 19 63\n",
+    "note": "교재 프로그래밍 연습 12번. 같은 위치의 원소끼리 더하고 첫 행렬에서 둘째 행렬을 뺀다.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 10,
@@ -233,13 +474,14 @@
   {
     "week": 10,
     "name": "assignment04_copy",
-    "title": "과제 4 · 1차원 배열 복사 함수",
-    "page": 11,
+    "title": "과제 4 · 지정 원형으로 배열 복사",
+    "page": 422,
     "path": "week10/assignment04_copy.c",
     "stdin": "",
-    "stdout": "3 -1 4 1 5\n",
-    "note": "자료에 있는 주제 요약에 맞춘 구현이다. 교재 p.422 12번의 세부 입출력 조건은 미제공. 배열값과 길이 5는 새 예제이다.",
-    "extra": []
+    "stdout": "a: 4 7 9 3 6\nb before: 10 20 30 40 50 60\nb after: 4 7 9 3 6 60\n",
+    "note": "교재 프로그래밍 연습 12번. void copyarray(int from[], int to[], int n)을 사용한다. 앞의 n개만 복사하므로 b[5]=60은 보존된다. 호출자는 두 배열이 n개 이상임을 보장한다.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 11,
@@ -264,28 +506,42 @@
     "extra": []
   },
   {
+    "week": 11,
+    "name": "assignment03_recursive_sum",
+    "title": "과제 3 · 재귀적 누적합 nplus",
+    "page": 403,
+    "path": "week11/assignment03_recursive_sum.c",
+    "stdin": "",
+    "stdout": "n=1 sum=1\nn=2 sum=3\nn=3 sum=6\nn=4 sum=10\nn=5 sum=15\nn=6 sum=21\nn=7 sum=28\nn=8 sum=36\nn=9 sum=45\nn=10 sum=55\n",
+    "note": "중간점검 1·2·3을 한 프로그램으로 구현했다. S(0)=0, S(n)=n+S(n−1)이며 1~10의 합을 차례로 출력한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
     "week": 12,
     "name": "assignment01_guess",
-    "title": "과제 1 · 두 파일과 전역변수",
-    "page": 5,
+    "title": "과제 1 · 두 파일과 testNum",
+    "page": 434,
     "path": "week12/assignment01_guess.c",
     "stdin": "",
     "stdout": null,
-    "note": "guess.c에서 전역 target을 정의하고 main에서 지역 input과 비교한다. 교재의 세부 형식 대신 자료의 요약 요구사항을 구현했다.",
+    "note": "교재 LAB 10-1(p.434–435). main 파일에 전역 guess와 지역 input을 두고, 별도 guess.c의 testNum(int input)이 −1/0/1을 반환한다. 원문 코드의 switch break만으로 반복이 계속되는 부분은 정답 시 return 0으로 고쳤다.",
     "extra": [
       "week12/guess.c"
-    ]
+    ],
+    "source": "textbook"
   },
   {
     "week": 12,
     "name": "assignment02_03_stack",
-    "title": "과제 2·3 · push와 pop",
-    "page": 6,
+    "title": "과제 2·3 · 용량 3의 전역 스택",
+    "page": 458,
     "path": "week12/assignment02_03_stack.c",
-    "stdin": "+ 10 + 20 - - - q\n",
-    "stdout": "pushed\npushed\npopped=20\npopped=10\nempty\n",
-    "note": "PDF p.6–7의 스택 주제를 구현했다. 교재 세부 조건은 미제공. 용량 5, + 정수: push, -: pop, q: 종료라는 인터페이스를 정했다.",
-    "extra": []
+    "stdin": "+ 3 + 5 + 9 + 1 - - - - q\n",
+    "stdout": "pushed\npushed\npushed\nfull\npopped=9\npopped=5\npopped=3\nempty\n",
+    "note": "교재 p.458의 전역 stack[MAXSIZE], MAXSIZE=3, top=−1, isfull과 isempty를 반영했다. 수업 과제 2·3을 합쳐 push/pop을 구현했다. 명령은 + 정수, -, q이며 pop은 성공 여부와 출력 포인터를 분리한다. p.459의 추가 예제 출력은 제공되지 않아 요구된 LIFO 동작으로 검증한다.",
+    "extra": [],
+    "source": "textbook"
   },
   {
     "week": 13,
@@ -301,12 +557,25 @@
   {
     "week": 13,
     "name": "assignment02_minimum",
-    "title": "과제 2 · 최솟값과 첨자",
-    "page": 11,
+    "title": "과제 2 · double 포인터로 최솟값과 첨자",
+    "page": 504,
     "path": "week13/assignment02_minimum.c",
     "stdin": "",
-    "stdout": "minimum=-3 index=1\n",
-    "note": "교재 세부 조건은 미제공. 새 예제 배열에서 포인터로 최솟값을 찾고 0 기반 첨자를 출력한다. 동률은 첫 번째 위치를 선택한다.",
-    "extra": []
+    "stdout": "minimum=1.5 index=2\n",
+    "note": "교재 프로그래밍 연습 03번. double *p로 순회하고 sizeof로 원소 수를 계산한다. 교재는 배열 전체 초기값을 지정하지 않으므로 출력 예시(첨자 2, 값 1.5)에 맞는 예제 배열을 구성했다. 동률은 첫 위치이며 배열은 비어 있지 않아야 한다.",
+    "extra": [],
+    "source": "textbook"
+  },
+  {
+    "week": 13,
+    "name": "assignment03_ex04_pointer_halves",
+    "title": "과제 3 · int와 short의 저장 단위",
+    "page": 504,
+    "path": "week13/assignment03_ex04_pointer_halves.c",
+    "stdin": "",
+    "stdout": "255\n255 15\n",
+    "note": "교재 프로그래밍 연습 04번(p.504–505). int 4바이트·short 2바이트·리틀엔디언 환경을 확인한다. short *를 int 객체에 직접 역참조하는 별칭 위반을 피하려고 memcpy와 short 배열로 두 절반을 수정한 뒤 int에 반영한다. 예시 출력과 최종 값 0x000F00FF를 검증한다.",
+    "extra": [],
+    "source": "textbook"
   }
 ]
