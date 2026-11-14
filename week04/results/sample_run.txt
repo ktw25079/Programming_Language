@@ -1,0 +1,7 @@
+$ week04_assignment01_temperature.exe
+stdin: 100
+kelvin=373.150 fahrenheit=212.000
+
+$ week04_assignment02_time.exe
+stdin: 1 2 3
+seconds=3723
