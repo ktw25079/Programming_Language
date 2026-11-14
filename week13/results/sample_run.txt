@@ -1,0 +1,7 @@
+$ week13_assignment01_reverse.exe
+stdin: (none)
+9 8 7 6 5 4 3 2 1 0
+
+$ week13_assignment02_minimum.exe
+stdin: (none)
+minimum=-3 index=1
