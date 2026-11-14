@@ -6,3 +6,16 @@ stdin: 100 55
 0
 1
 1
+
+$ week06_assignment02_ex07_simple_interest.exe
+stdin: 5
+total=1225000.00 KRW
+
+$ week06_assignment03_ex08_compound_interest.exe
+stdin: 5
+total=1246181.94 KRW
+
+$ week06_assignment04_ex10_quadratic.exe
+stdin: (none)
+root1=0.851 residual=0.000
+root2=-2.351 residual=0.000
