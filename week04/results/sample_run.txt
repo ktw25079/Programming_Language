@@ -5,3 +5,16 @@ kelvin=373.150 fahrenheit=212.000
 $ week04_assignment02_time.exe
 stdin: 1 2 3
 seconds=3723
+
+$ week04_assignment03_ex04_codes.exe
+stdin: $
+$ 044 36 0x24
+
+$ week04_assignment03_ex05_areas.exe
+stdin: 3.78 9.45
+rectangle:       35.721
+triangle:  17.860      
+
+$ week04_assignment03_ex07_average.exe
+stdin: 3.876 25.983
+sum=29.859000 average=14.929500
