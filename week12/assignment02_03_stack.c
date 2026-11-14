@@ -1,17 +1,25 @@
 #include <stdio.h>
-#define CAPACITY 5
-static int stack[CAPACITY];
-static int count;
-static int push(int value)
+#define MAXSIZE 3
+int stack[MAXSIZE];
+int top=-1;
+int isfull(void)
 {
-    if (count==CAPACITY) return 0;
-    stack[count++]=value;
+    return top==MAXSIZE-1;
+}
+int isempty(void)
+{
+    return top==-1;
+}
+int push(int value)
+{
+    if (isfull()) return 0;
+    stack[++top]=value;
     return 1;
 }
-static int pop(int *value)
+int pop(int *value)
 {
-    if (count==0) return 0;
-    *value=stack[--count];
+    if (isempty()) return 0;
+    *value=stack[top--];
     return 1;
 }
 int main(void)
