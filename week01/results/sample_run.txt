@@ -1,3 +1,24 @@
+$ week01_assignment02_ex02_languages.exe
+stdin: (none)
+C
+Pascal
+Java
+Python
+Kotlin
+
+$ week01_assignment02_ex04_creators.exe
+stdin: (none)
+데니스 리치
+제임스 고슬링
+귀도 반 로섬
+
+$ week01_assignment02_ex06_stars.exe
+stdin: (none)
+*
+**
+***
+****
+
 $ week01_hello.exe
 stdin: (none)
 Hello, C!
