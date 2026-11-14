@@ -2,7 +2,7 @@
 
 ## 목표
 
-실습자료 10번의 내용이 확인되는 과제를 C11 프로그램으로 구현하고 실행 결과를 확인한다.
+실습자료 10번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
 
 ## 과정
 
@@ -11,7 +11,7 @@
 | [assignment01_seconds.c](assignment01_seconds.c) | 과제 1 · 시간 변환 함수와 종료 조건 | 실습 PDF p.8 |
 | [assignment02_grades.c](assignment02_grades.c) | 과제 2 · 평균·학점 함수 | 실습 PDF p.9 |
 | [assignment03_power.c](assignment03_power.c) | 과제 3 · 정수 거듭제곱 함수 | 실습 PDF p.10 |
-| [assignment04_copy.c](assignment04_copy.c) | 과제 4 · 1차원 배열 복사 함수 | 실습 PDF p.11 |
+| [assignment04_copy.c](assignment04_copy.c) | 과제 4 · 지정 원형으로 배열 복사 | 교재 p.422 |
 
 각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
 
@@ -79,9 +79,9 @@ cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment03_power.c -o exercise -lm
 power=-27
 ```
 
-### 과제 4 · 1차원 배열 복사 함수
+### 과제 4 · 지정 원형으로 배열 복사
 
-자료에 있는 주제 요약에 맞춘 구현이다. 교재 p.422 12번의 세부 입출력 조건은 미제공. 배열값과 길이 5는 새 예제이다.
+교재 프로그래밍 연습 12번. void copyarray(int from[], int to[], int n)을 사용한다. 앞의 n개만 복사하므로 b[5]=60은 보존된다. 호출자는 두 배열이 n개 이상임을 보장한다.
 
 ```bash
 cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment04_copy.c -o exercise -lm
@@ -93,13 +93,13 @@ cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment04_copy.c -o exercise -lm
 검증한 출력:
 
 ```text
-3 -1 4 1 5
+a: 4 7 9 3 6
+b before: 10 20 30 40 50 60
+b after: 4 7 9 3 6 60
 ```
 
 ## 결과
 
 4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
-
-과제 4는 배열 복사라는 주제 요약에 맞춘 구현이다. 교재의 배열값·함수 원형·출력 형식과의 일치는 확인하지 못했다.
 
 [전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
