@@ -33,3 +33,18 @@ sum=15.000 difference=10.000 product=31.250
 quotient=5.000
 sum=8.000 difference=8.000 product=0.000
 quotient=undefined (division by zero)
+
+$ week02_assignment03_ex03_literals.exe
+stdin: (none)
+8 8 8
+9 9 9
+10 10 10
+11 11 11
+12 12 12
+13 13 13
+14 14 14
+15 15 15
+
+$ week02_assignment03_ex10_characters.exe
+stdin: (none)
+C F R P
