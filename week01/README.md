@@ -97,6 +97,6 @@ Hello, C!
 
 4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
 
-[Visual Studio 솔루션](mybook/README.md)은 파일 구성을 검사했으며 GUI 실행은 수행하지 않았다.
+[Visual Studio 솔루션](mybook/README.md)은 네 구성(Debug/Release × Win32/x64)을 빌드·실행했으며, GUI에서도 Debug/x64의 ch01 실행을 확인했다. [MSVC 결과](../results/README.md)
 
 [전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
