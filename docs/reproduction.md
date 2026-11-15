@@ -11,11 +11,20 @@ python tools/verify.py --cc "zig cc"
 
 컴파일러 경로에 공백이 있으면 `--cc` 값 안에서 실행 파일 경로를 따옴표로 감싼다. 출력은 `build/`에 생성한다. 프로그램마다 독립된 `main`이 있으므로 모든 C 파일을 한 번에 링크하지 않는다. `week12/assignment01_guess.c`만 `week12/guess.c`와 함께 링크한다.
 
-기록을 새 실행 결과로 갱신하려면 `--report`를 붙인다. 이 옵션은 `results/verification.json`과 주차별 `results/sample_run.txt`를 덮어쓴다. 일반 검증은 저장된 기록을 수정하지 않는다.
+기록을 새 실행 결과로 갱신하려면 `--report`를 붙인다. 이 옵션은 해당 컴파일러의 검사 JSON과 주차별 실행 로그를 갱신한다. Zig/GCC 계열은 `verification.json`·`sample_run.txt`, MSVC는 `verification_msvc.json`·`sample_run_msvc.txt`를 사용한다. 일반 검증은 저장된 기록을 수정하지 않는다.
 
 ## Windows와 Visual Studio
 
-1주차는 [mybook 솔루션](../week01/mybook/README.md)을 제공한다. Visual Studio의 C++ 데스크톱 개발 도구가 설치되어 있다면 빈 콘솔 프로젝트를 만들고 원하는 `.c` 파일을 추가한다. 확장자는 `.c`로 유지한다. 같은 폴더의 `.h` 파일도 함께 보관한다. MSVC가 `scanf`에 C4996 경고를 표시하면 해당 프로젝트의 전처리기 정의에 `_CRT_SECURE_NO_WARNINGS`를 추가할 수 있다. 이 저장소의 실측 빌드 결과는 Visual Studio가 아니라 Zig C 컴파일러에서 얻었다.
+1주차는 [mybook 솔루션](../week01/mybook/README.md)을 제공한다. Visual Studio의 C++ 데스크톱 개발 도구가 설치되어 있다면 빈 콘솔 프로젝트를 만들고 원하는 `.c` 파일을 추가한다. 확장자는 `.c`로 유지한다. 같은 폴더의 `.h` 파일도 함께 보관한다. MSVC가 `scanf`에 C4996 경고를 표시하면 해당 프로젝트의 전처리기 정의에 `_CRT_SECURE_NO_WARNINGS`를 추가할 수 있다. Visual Studio 2022 Community 17.14.45의 MSVC와 Zig에서 각각 빌드·실행을 확인했다.
+
+MSVC 전체 검사는 **x64 Native Tools Command Prompt for VS 2022**에서 저장소 루트로 이동한 뒤 실행한다. Python이 PATH에 없다면 설치된 Python 실행 파일의 절대경로를 사용한다.
+
+```bat
+python tools/verify.py --cc cl --report
+msbuild week01\mybook\mybook.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+```
+
+솔루션의 `Configuration`은 Debug/Release, `Platform`은 Win32/x64로 바꿔 빌드할 수 있다. 전체 과제 검사는 x64이며, 솔루션 세 예제는 네 구성을 모두 검사했다. MSVC의 기록은 `_msvc` 접미사를 붙여 기존 Zig 기록과 구분한다.
 
 명령줄 예제의 `./exercise`는 Windows에서는 `.\exercise.exe`로 실행한다. 실행 파일은 저장소에 포함하지 않는다.
 
