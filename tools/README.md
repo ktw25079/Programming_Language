@@ -5,6 +5,9 @@
 ```bash
 python tools/verify.py --cc gcc
 python tools/verify.py --cc "zig cc" --report
+python tools/verify.py --cc cl --report
 ```
 
-두 번째 명령은 실제 검사 기록을 갱신한다. [빌드 안내](../docs/reproduction.md)
+`cl`은 Visual Studio의 x64 Native Tools Command Prompt에서 실행한다. MSVC에는 `/TC /std:c11 /W4 /WX /utf-8`을 적용하고, 다른 컴파일러에는 기존 C11 경고 옵션을 적용한다.
+
+`--report`는 실제 검사 기록을 갱신한다. MSVC 결과는 `results/verification_msvc.json`과 주차별 `sample_run_msvc.txt`에 별도로 저장해 기존 검증 기록을 보존한다. 실행 파일은 `build/msvc/` 또는 `build/portable/`에 생성한다. [빌드 안내](../docs/reproduction.md)
