@@ -1,10 +1,8 @@
 # week10 · 함수와 원형
 
-## 목표
+계산과 판정을 함수로 나누고 함수 원형, 인자와 반환값을 사용하는 방법을 복습했다.
 
-실습자료 10번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -13,25 +11,22 @@
 | [assignment03_power.c](assignment03_power.c) | 과제 3 · 정수 거듭제곱 함수 | 실습 PDF p.10 |
 | [assignment04_copy.c](assignment04_copy.c) | 과제 4 · 지정 원형으로 배열 복사 | 교재 p.422 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 시간 변환 함수와 종료 조건
 
-시 0~596522, 분·초 0~59. 0 0 0은 출력 없이 종료한다.
+**요구사항:** 시간 변환 함수를 사용해 반복 계산하고 0시 0분 0초에서 종료한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment01_seconds.c -o exercise -lm
-./exercise
-```
+**풀이:** 원형을 선언한 `to_seconds`가 `시*3600+분*60+초`를 반환하도록 했다. 시 0~596522, 분·초 0~59를 받고 `0 0 0`은 계산 결과를 출력하지 않고 종료한다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 1 2 3
 0 0 0
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 seconds=3723
@@ -39,20 +34,17 @@ seconds=3723
 
 ### 과제 2 · 평균·학점 함수
 
-국어 수학 영어(각 0~100), 계속 여부(1/0) 순서로 입력한다.
+**요구사항:** 세 과목의 평균과 학점을 각각 함수로 계산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment02_grades.c -o exercise -lm
-./exercise
-```
+**풀이:** `average`는 실수 평균을, `grade`는 평균 구간에 해당하는 문자를 반환한다. 국어·수학·영어 각 0~100점과 계속 여부 1/0을 입력받아 반복한다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 90 100 80 0
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 average=90.00 grade=A
@@ -60,20 +52,17 @@ average=90.00 grade=A
 
 ### 과제 3 · 정수 거듭제곱 함수
 
-x=−100~100, y=0~30 중 int 결과가 표현 가능한 입력. 지수 0은 0^0을 포함해 반복 곱의 항등값 1로 정했다.
+**요구사항:** 정수 x의 y제곱을 반환하는 함수를 작성한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment03_power.c -o exercise -lm
-./exercise
-```
+**풀이:** `getMultiple`에서 초기값 1에 x를 y번 곱했다. x는 −100~100, y는 0~30이며 호출 전 int 범위 초과를 확인한다. 지수 0은 0^0을 포함해 1로 처리했다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 -3 3
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 power=-27
@@ -81,16 +70,11 @@ power=-27
 
 ### 과제 4 · 지정 원형으로 배열 복사
 
-교재 프로그래밍 연습 12번. void copyarray(int from[], int to[], int n)을 사용한다. 앞의 n개만 복사하므로 b[5]=60은 보존된다. 호출자는 두 배열이 n개 이상임을 보장한다.
+**요구사항:** 지정된 함수 원형으로 배열의 앞 n개 원소를 복사한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment04_copy.c -o exercise -lm
-./exercise
-```
+**풀이:** `void copyarray(int from[], int to[], int n)`에서 인덱스 0~n−1만 복사했다. 길이 5인 a를 길이 6인 b에 복사해 마지막 값 60을 보존했다. 두 배열은 n개 이상의 원소를 가져야 한다.
 
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 a: 4 7 9 3 6
@@ -98,8 +82,47 @@ b before: 10 20 30 40 50 60
 b after: 4 7 9 3 6 60
 ```
 
-## 결과
+## 검증 결과
 
-4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
+4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
 
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 시간 변환 함수와 종료 조건**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment01_seconds.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 평균·학점 함수**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment02_grades.c -o exercise -lm
+./exercise
+```
+
+**과제 3 · 정수 거듭제곱 함수**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment03_power.c -o exercise -lm
+./exercise
+```
+
+**과제 4 · 지정 원형으로 배열 복사**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week10/assignment04_copy.c -o exercise -lm
+./exercise
+```
+
+</details>
+
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
