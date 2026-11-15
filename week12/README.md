@@ -17,7 +17,7 @@
 
 **풀이:** main 파일에 전역 `guess`와 지역 `input`을 두고 [guess.h](guess.h)의 `extern` 선언으로 정답을 공유했다. [guess.c](guess.c)의 `testNum`이 −1/0/1을 반환하면 `switch`로 힌트를 출력하고 정답일 때 `return 0`으로 종료한다.
 
-**실행 결과:** 1~100 후보를 입력하는 검사에서 정답에 도달해 `correct`로 종료했고, 앞서 출력한 대소 힌트가 정답과 일치함을 확인했다. 정답은 실행마다 달라진다.
+**실행 결과:** 1~100 후보 입력 검사에서 대소 힌트와 정답 도달 후 종료를 확인했다. 정답은 실행마다 달라질 수 있다.
 
 ### 과제 2·3 · 용량 3의 전역 스택
 
@@ -44,15 +44,11 @@ popped=3
 empty
 ```
 
-## 검증 결과
-
-2개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
 
-## 실행 방법
-
-저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+아래 명령은 저장소 루트에서 실행한다(GCC·Clang 계열). [Visual Studio 안내](../docs/reproduction.md)
 
 <details>
 <summary>과제별 컴파일·실행 명령</summary>
