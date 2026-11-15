@@ -1,0 +1,97 @@
+{
+  "visual_studio": "2022 Community",
+  "builds": [
+    {
+      "configuration": "Debug",
+      "platform": "Win32",
+      "build_exit_code": 0,
+      "build_log": "\n  assignment02_ex02_languages.c\n  ch01.vcxproj -> [repository]\\build\\mybook\\Win32\\Debug\\ch01\\ch01.exe\n  assignment02_ex04_creators.c\n  ch02.vcxproj -> [repository]\\build\\mybook\\Win32\\Debug\\ch02\\ch02.exe\n  assignment02_ex06_stars.c\n  ch03.vcxproj -> [repository]\\build\\mybook\\Win32\\Debug\\ch03\\ch03.exe\n\n",
+      "executions": [
+        {
+          "project": "ch01",
+          "passed": true,
+          "stdout": "C\nPascal\nJava\nPython\nKotlin\n"
+        },
+        {
+          "project": "ch02",
+          "passed": true,
+          "stdout": "데니스 리치\n제임스 고슬링\n귀도 반 로섬\n"
+        },
+        {
+          "project": "ch03",
+          "passed": true,
+          "stdout": "*\n**\n***\n****\n"
+        }
+      ]
+    },
+    {
+      "configuration": "Debug",
+      "platform": "x64",
+      "build_exit_code": 0,
+      "build_log": "\n  assignment02_ex02_languages.c\n  ch01.vcxproj -> [repository]\\build\\mybook\\x64\\Debug\\ch01\\ch01.exe\n  assignment02_ex04_creators.c\n  ch02.vcxproj -> [repository]\\build\\mybook\\x64\\Debug\\ch02\\ch02.exe\n  assignment02_ex06_stars.c\n  ch03.vcxproj -> [repository]\\build\\mybook\\x64\\Debug\\ch03\\ch03.exe\n\n",
+      "executions": [
+        {
+          "project": "ch01",
+          "passed": true,
+          "stdout": "C\nPascal\nJava\nPython\nKotlin\n"
+        },
+        {
+          "project": "ch02",
+          "passed": true,
+          "stdout": "데니스 리치\n제임스 고슬링\n귀도 반 로섬\n"
+        },
+        {
+          "project": "ch03",
+          "passed": true,
+          "stdout": "*\n**\n***\n****\n"
+        }
+      ]
+    },
+    {
+      "configuration": "Release",
+      "platform": "Win32",
+      "build_exit_code": 0,
+      "build_log": "\n  assignment02_ex02_languages.c\n  ch01.vcxproj -> [repository]\\build\\mybook\\Win32\\Release\\ch01\\ch01.exe\n  assignment02_ex04_creators.c\n  ch02.vcxproj -> [repository]\\build\\mybook\\Win32\\Release\\ch02\\ch02.exe\n  assignment02_ex06_stars.c\n  ch03.vcxproj -> [repository]\\build\\mybook\\Win32\\Release\\ch03\\ch03.exe\n\n",
+      "executions": [
+        {
+          "project": "ch01",
+          "passed": true,
+          "stdout": "C\nPascal\nJava\nPython\nKotlin\n"
+        },
+        {
+          "project": "ch02",
+          "passed": true,
+          "stdout": "데니스 리치\n제임스 고슬링\n귀도 반 로섬\n"
+        },
+        {
+          "project": "ch03",
+          "passed": true,
+          "stdout": "*\n**\n***\n****\n"
+        }
+      ]
+    },
+    {
+      "configuration": "Release",
+      "platform": "x64",
+      "build_exit_code": 0,
+      "build_log": "\n  assignment02_ex02_languages.c\n  ch01.vcxproj -> [repository]\\build\\mybook\\x64\\Release\\ch01\\ch01.exe\n  assignment02_ex04_creators.c\n  ch02.vcxproj -> [repository]\\build\\mybook\\x64\\Release\\ch02\\ch02.exe\n  assignment02_ex06_stars.c\n  ch03.vcxproj -> [repository]\\build\\mybook\\x64\\Release\\ch03\\ch03.exe\n\n",
+      "executions": [
+        {
+          "project": "ch01",
+          "passed": true,
+          "stdout": "C\nPascal\nJava\nPython\nKotlin\n"
+        },
+        {
+          "project": "ch02",
+          "passed": true,
+          "stdout": "데니스 리치\n제임스 고슬링\n귀도 반 로섬\n"
+        },
+        {
+          "project": "ch03",
+          "passed": true,
+          "stdout": "*\n**\n***\n****\n"
+        }
+      ]
+    }
+  ]
+}
