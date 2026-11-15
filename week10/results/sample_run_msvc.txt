@@ -1,0 +1,18 @@
+$ week10_assignment01_seconds.exe
+stdin: 1 2 3
+0 0 0
+seconds=3723
+
+$ week10_assignment02_grades.exe
+stdin: 90 100 80 0
+average=90.00 grade=A
+
+$ week10_assignment03_power.exe
+stdin: -3 3
+power=-27
+
+$ week10_assignment04_copy.exe
+stdin: (none)
+a: 4 7 9 3 6
+b before: 10 20 30 40 50 60
+b after: 4 7 9 3 6 60
