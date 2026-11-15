@@ -1,10 +1,8 @@
 # week09 · 배열과 행렬 연산
 
-## 목표
+배열에 점수와 행렬을 저장하고 반복문으로 평균·전치·합·차를 계산했다.
 
-실습자료 9번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -13,24 +11,21 @@
 | [assignment03_ex10_student_totals.c](assignment03_ex10_student_totals.c) | 과제 3 · 학생별 합계와 평균 | 교재 p.374 |
 | [assignment04_ex12_matrix_arithmetic.c](assignment04_ex12_matrix_arithmetic.c) | 과제 4 · 4×3 행렬 합과 차 | 교재 p.375 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 다섯 과목 평균과 학점
 
-과목별 점수 0~100. 학점은 반올림 전 평균으로 판정한다.
+**요구사항:** 다섯 과목의 점수를 배열에 저장하고 평균과 학점을 구한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment01_grades.c -o exercise -lm
-./exercise
-```
+**풀이:** 0~100점 다섯 개를 누적해 5.0으로 나누고, 반올림 전 평균을 90·80·70·60점 기준으로 비교해 A·B·C·D·F를 정했다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 90 80 100 70 60
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 average=80.00 grade=B
@@ -38,16 +33,11 @@ average=80.00 grade=B
 
 ### 과제 2 · 5×3 행렬의 전치
 
+**요구사항:** 5×3 행렬을 3×5 행렬로 전치한다.
 
+**풀이:** 원소를 `a[i][j]=i+j`로 채우고 `transpose[j][i]=a[i][j]`로 행과 열의 위치를 바꿨다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment02_transpose.c -o exercise -lm
-./exercise
-```
-
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 original:
@@ -64,16 +54,11 @@ transpose:
 
 ### 과제 3 · 학생별 합계와 평균
 
-교재 프로그래밍 연습 10번. 표의 5×4 점수를 그대로 저장했다. student1~5는 교재 표의 위에서 아래 행 순서이다.
+**요구사항:** 교재의 5×4 성적표에서 학생별 총점과 평균을 계산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment03_ex10_student_totals.c -o exercise -lm
-./exercise
-```
+**풀이:** 각 행의 네 점수를 누적하고 4.0으로 나눴다. student1~5는 교재 표의 행 순서이며 첫 학생의 총점은 370점, 평균은 92.50점이다.
 
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 student1 total=370 average=92.50
@@ -85,16 +70,11 @@ student5 total=298 average=74.50
 
 ### 과제 4 · 4×3 행렬 합과 차
 
-교재 프로그래밍 연습 12번. 같은 위치의 원소끼리 더하고 첫 행렬에서 둘째 행렬을 뺀다.
+**요구사항:** 두 4×3 행렬의 합과 차를 구한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment04_ex12_matrix_arithmetic.c -o exercise -lm
-./exercise
-```
+**풀이:** 이중 반복문으로 같은 위치의 원소를 더하거나 첫 행렬에서 둘째 행렬을 뺐다. 결과를 별도 배열에 저장해 행 단위로 출력했다.
 
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 sum:
@@ -109,8 +89,47 @@ difference:
 22 19 63
 ```
 
-## 결과
+## 검증 결과
 
-4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
+4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
 
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 다섯 과목 평균과 학점**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment01_grades.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 5×3 행렬의 전치**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment02_transpose.c -o exercise -lm
+./exercise
+```
+
+**과제 3 · 학생별 합계와 평균**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment03_ex10_student_totals.c -o exercise -lm
+./exercise
+```
+
+**과제 4 · 4×3 행렬 합과 차**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week09/assignment04_ex12_matrix_arithmetic.c -o exercise -lm
+./exercise
+```
+
+</details>
+
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
