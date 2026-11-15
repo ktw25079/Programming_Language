@@ -1,10 +1,8 @@
 # week11 · 배열 함수·난수·재귀
 
-## 목표
+배열을 함수에 전달해 수정하고 난수 게임과 재귀적 누적합을 구현했다.
 
-실습자료 11번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -12,24 +10,21 @@
 | [assignment02_guess.c](assignment02_guess.c) | 과제 2 · 난수 알아맞히기 | 실습 PDF p.11 |
 | [assignment03_recursive_sum.c](assignment03_recursive_sum.c) | 과제 3 · 재귀적 누적합 nplus | 교재 p.403 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 2차원 배열 증가 함수
 
-배열 크기·초기값이 지정되지 않아 2×3, 1~6을 사용한다. 증가량 −1,000,000~1,000,000.
+**요구사항:** 함수에 2차원 배열을 전달해 모든 원소에 입력값을 더한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment01_matrix.c -o exercise -lm
-./exercise
-```
+**풀이:** 예제 배열은 2×3 크기에 1~6을 저장했다. `increase`가 이중 반복문으로 원본을 수정하고 `print_matrix`가 전후를 출력한다. 증가량은 −1,000,000~1,000,000이다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 2
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 before:
@@ -42,27 +37,19 @@ after:
 
 ### 과제 2 · 난수 알아맞히기
 
-1~100 난수. higher는 더 큰 값, lower는 더 작은 값, correct는 정답을 뜻한다. 자동 검사는 1·100과 나머지 후보를 입력한 뒤 정답 위치와 모든 대소 힌트의 일관성을 확인한다.
+**요구사항:** 1~100 난수를 만들고 입력값에 따라 힌트를 주며 정답을 찾는다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment02_guess.c -o exercise -lm
-./exercise
-```
+**풀이:** `srand`로 초기화한 뒤 `rand()%100+1`로 정답을 정했다. 입력이 작으면 `higher`, 크면 `lower`, 같으면 `correct`를 출력하고 종료한다.
 
-1~100 정수를 입력하고 `higher`/`lower` 힌트에 따라 다시 입력한다. 정답이면 `correct`를 출력하고 종료한다.
+**실행 결과:** 1~100 후보를 입력하는 검사에서 정답에 도달해 `correct`로 종료했고, 앞서 출력한 대소 힌트가 정답과 일치함을 확인했다. 정답은 실행마다 달라진다.
 
 ### 과제 3 · 재귀적 누적합 nplus
 
-중간점검 1·2·3을 한 프로그램으로 구현했다. S(0)=0, S(n)=n+S(n−1)이며 1~10의 합을 차례로 출력한다.
+**요구사항:** 재귀 함수 nplus로 1부터 n까지의 합을 구한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment03_recursive_sum.c -o exercise -lm
-./exercise
-```
+**풀이:** 종료 조건 `S(0)=0`과 재귀식 `S(n)=n+S(n−1)`을 구현했다. 중간점검 세 문항을 함께 반영해 n=1~10의 누적합을 출력했다.
 
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 n=1 sum=1
@@ -77,8 +64,40 @@ n=9 sum=45
 n=10 sum=55
 ```
 
-## 결과
+## 검증 결과
 
-3개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
+3개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
 
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 2차원 배열 증가 함수**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment01_matrix.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 난수 알아맞히기**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment02_guess.c -o exercise -lm
+./exercise
+```
+
+**과제 3 · 재귀적 누적합 nplus**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week11/assignment03_recursive_sum.c -o exercise -lm
+./exercise
+```
+
+</details>
+
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
