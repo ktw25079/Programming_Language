@@ -1,0 +1,23 @@
+$ week03_assignment01_circle.exe
+stdin: (none)
+radius=2.400 circumference=15.079642 area=18.095570
+
+$ week03_assignment02_ex07_octal.exe
+stdin: (none)
+! " # $ %
+
+$ week03_assignment02_ex08_area.exe
+stdin: (none)
+18 pyeong = 59.504 m^2
+25 pyeong = 82.645 m^2
+
+$ week03_assignment03_ex09_miles.exe
+stdin: (none)
+60 km = 37.282 mile
+80 km = 49.710 mile
+100 km = 62.137 mile
+120 km = 74.565 mile
+
+$ week03_assignment03_ex12_exchange.exe
+stdin: (none)
+1000000 KRW = 892.857143 USD
