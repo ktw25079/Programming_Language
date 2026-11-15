@@ -1,0 +1,12 @@
+$ week13_assignment01_reverse.exe
+stdin: (none)
+9 8 7 6 5 4 3 2 1 0
+
+$ week13_assignment02_minimum.exe
+stdin: (none)
+minimum=1.5 index=2
+
+$ week13_assignment03_ex04_pointer_halves.exe
+stdin: (none)
+255
+255 15
