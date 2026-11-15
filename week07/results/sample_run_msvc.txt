@@ -1,0 +1,15 @@
+$ week07_assignment01_case.exe
+stdin: A
+A(65) a(97)
+
+$ week07_assignment02_vowel.exe
+stdin: E
+vowel
+
+$ week07_assignment03_ex06_tax_bracket.exe
+stdin: 190000000
+income=190000000 KRW rate=38%
+
+$ week07_assignment03_ex07_quarter.exe
+stdin: 7
+month=7 quarter=3
