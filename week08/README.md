@@ -1,10 +1,8 @@
 # week08 · 반복문
 
-## 목표
+for·while·do-while을 사용해 패턴 출력, 반복 입력과 누적 계산을 구현했다.
 
-실습자료 8번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -13,35 +11,29 @@
 | [assignment03_powers.c](assignment03_powers.c) | 과제 3 · 제곱·세제곱 표 | 실습 PDF p.9 |
 | [assignment04_ex07_sum_limit.c](assignment04_ex07_sum_limit.c) | 교재 과제 07 · 10000 이하의 최대 누적합 | 교재 p.336 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 알파벳 삼각형
 
+**요구사항:** A부터 시작해 한 글자씩 길어지는 알파벳 삼각형을 출력한다.
 
+**풀이:** 바깥 `for`문은 행의 마지막 문자를 A~Z로 바꾸고, 안쪽 반복문은 A부터 해당 문자까지 출력한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment01_triangle.c -o exercise -lm
-./exercise
-```
-
-표준입력이 필요 없는 고정 예제이다.
+**실행 결과:** 첫 줄 `A`, 둘째 줄 `AB`에서 시작해 마지막 줄 `ABCDEFGHIJKLMNOPQRSTUVWXYZ`까지 26행을 출력했다.
 
 ### 과제 2 · 반복하는 구구단
 
-입력: 단(2~9), 계속 여부(1/0), 반복 시 다음 단.
+**요구사항:** 입력한 단의 구구단을 출력하고 선택에 따라 반복한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment02_table.c -o exercise -lm
-./exercise
-```
+**풀이:** `for`로 1~9를 곱하고 `do-while`로 다음 단 입력을 반복했다. 단은 2~9, 계속 여부는 1 또는 0을 받는다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 2 0
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 2 x 1 = 2
@@ -57,20 +49,17 @@ cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment02_table.c -o exercise -lm
 
 ### 과제 3 · 제곱·세제곱 표
 
-출력량과 연산 범위를 고려하여 n=1~10000. 매크로 인자에 증감 연산을 넣지 않는다.
+**요구사항:** 1부터 n까지 각 수의 제곱·세제곱을 표로 출력한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment03_powers.c -o exercise -lm
-./exercise
-```
+**풀이:** `SQUARE`·`CUBE` 매크로를 정의하고 `while`에서 순서대로 계산했다. n은 1~10000이고 연산에는 `long long`을 사용한다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 3
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 1 1 1
@@ -80,23 +69,57 @@ cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment03_powers.c -o exercise -l
 
 ### 교재 과제 07 · 10000 이하의 최대 누적합
 
-교재 프로그래밍 연습 07번. 다음 항까지 더했을 때 한도를 넘는지 확인한다. 수업 PDF p.10의 중복된 과제 2는 파일명에서 assignment04로 구분했다.
+**요구사항:** 1부터 더한 합이 10000 이하인 최대 n과 합을 구한다.
+
+**풀이:** 다음 항을 더해도 한도 이하인지 `while` 조건에서 먼저 확인했다. n=140까지의 합은 9870이며 141을 더하면 10011이 된다.
+
+**실행 결과**
+
+```text
+n=140 sum=9870 next=10011
+```
+
+## 검증 결과
+
+4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 알파벳 삼각형**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment01_triangle.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 반복하는 구구단**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment02_table.c -o exercise -lm
+./exercise
+```
+
+**과제 3 · 제곱·세제곱 표**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment03_powers.c -o exercise -lm
+./exercise
+```
+
+**교재 과제 07 · 10000 이하의 최대 누적합**
 
 ```bash
 cc -std=c11 -Wall -Wextra -Wpedantic week08/assignment04_ex07_sum_limit.c -o exercise -lm
 ./exercise
 ```
 
-표준입력이 필요 없는 고정 예제이다.
+</details>
 
-검증한 출력:
-
-```text
-n=140 sum=9870 next=10011
-```
-
-## 결과
-
-4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
-
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
