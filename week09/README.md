@@ -56,7 +56,7 @@ transpose:
 
 **요구사항:** 교재의 5×4 성적표에서 학생별 총점과 평균을 계산한다.
 
-**풀이:** 각 행의 네 점수를 누적하고 4.0으로 나눴다. student1~5는 교재 표의 행 순서이며 첫 학생의 총점은 370점, 평균은 92.50점이다.
+**풀이:** 각 행의 네 점수를 누적하고 4.0으로 나눴다. student1~5는 교재 표의 행 순서이다.
 
 **실행 결과**
 
@@ -89,15 +89,11 @@ difference:
 22 19 63
 ```
 
-## 검증 결과
-
-4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
 
-## 실행 방법
-
-저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+아래 명령은 저장소 루트에서 실행한다(GCC·Clang 계열). [Visual Studio 안내](../docs/reproduction.md)
 
 <details>
 <summary>과제별 컴파일·실행 명령</summary>
