@@ -14,15 +14,27 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--cc', default=os.environ.get('CC', 'cc'), help='Compiler command, e.g. gcc or "zig cc"')
-    parser.add_argument('--report', action='store_true', help='Write results/verification.json and per-week transcripts')
+    parser.add_argument('--cc', default=os.environ.get('CC', 'cc'), help='Compiler command, e.g. gcc, "zig cc", or cl in a VS developer shell')
+    parser.add_argument('--report', action='store_true', help='Write verification reports and transcripts (MSVC uses an _msvc suffix)')
     args = parser.parse_args()
     compiler = shlex.split(args.cc)
+    msvc = Path(compiler[0]).name.lower() in ('cl', 'cl.exe')
     programs = json.loads((ROOT/'tests/programs.json').read_text(encoding='utf-8'))
-    build = ROOT/'build'
-    build.mkdir(exist_ok=True)
+    build = ROOT/'build'/('msvc' if msvc else 'portable')
+    build.mkdir(parents=True, exist_ok=True)
     results = []
     logs = {}
+
+    def compile_program(sources, target):
+        if msvc:
+            flags = ['/nologo', '/TC', '/std:c11', '/W4', '/WX', '/utf-8', '/D_CRT_SECURE_NO_WARNINGS']
+            command = compiler + flags + sources + ['/Fe:'+str(target), '/Fo:'+str(build)+os.sep]
+        else:
+            flags = ['-std=c11','-Wall','-Wextra','-Wpedantic','-Werror']
+            command = compiler + flags + sources + ['-o', str(target), '-lm']
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, errors='replace', timeout=180)
+        if result.returncode:
+            raise RuntimeError(' '.join(command)+'\n'+result.stdout+'\n'+result.stderr)
 
     def check(exe, name, stdin, expected=None, code=0):
         run = subprocess.run([str(exe)], input=stdin, text=True, encoding='utf-8', capture_output=True, timeout=5)
@@ -35,10 +47,7 @@ def main():
     for p in programs:
         exe = build / (f"week{p['week']:02d}_{p['name']}" + ('.exe' if os.name=='nt' else ''))
         sources = [p['path']] + p['extra']
-        command = compiler + ['-std=c11','-Wall','-Wextra','-Wpedantic','-Werror'] + sources + ['-o', str(exe), '-lm']
-        compile_result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=180)
-        if compile_result.returncode:
-            raise RuntimeError(' '.join(command)+'\n'+compile_result.stderr)
+        compile_program(sources, exe)
         print('Compiled', p['path'], flush=True)
         if p['stdout'] is not None:
             output = check(exe, p['path'], p['stdin'], p['stdout'])
@@ -112,16 +121,19 @@ def main():
         check(exe(4,name),name+' nonfinite input','nan 1',code=1)
     check(exe(4,'assignment03_ex04_codes'),'question mark is valid','?','? 077 63 0x3f\n')
     harness=build/('function_contracts'+('.exe' if os.name=='nt' else ''))
-    subprocess.run(compiler+['-std=c11','-Wall','-Wextra','-Wpedantic','-Werror','tests/function_contracts.c','-o',str(harness)],cwd=ROOT,check=True,capture_output=True,timeout=180)
+    compile_program(['tests/function_contracts.c'], harness)
     check(harness,'copy, recursion, minimum, stack and comparison function contracts','','')
-    report={'platform':platform.platform(),'compiler':subprocess.run(compiler+['--version'],capture_output=True,text=True,check=True).stdout.splitlines()[0], 'program_count':len(programs),'case_count':len(results),'cases':results,'source_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(ROOT.glob('week*/*')) if p.suffix in ('.c','.h')}}
+    version_run = subprocess.run(compiler if msvc else compiler+['--version'],capture_output=True,text=True,errors='replace')
+    version = (version_run.stderr if msvc else version_run.stdout).splitlines()[0]
+    report={'platform':platform.platform(),'compiler':version,'compiler_family':'msvc' if msvc else 'gcc-compatible', 'program_count':len(programs),'case_count':len(results),'cases':results,'source_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(ROOT.glob('week*/*')) if p.suffix in ('.c','.h')}}
     if args.report:
         (ROOT/'results').mkdir(exist_ok=True)
-        (ROOT/'results/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        suffix = '_msvc' if msvc else ''
+        (ROOT/f'results/verification{suffix}.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         for week, entries in logs.items():
             folder=ROOT/f'week{week:02d}/results'
             folder.mkdir(exist_ok=True)
-            (folder/'sample_run.txt').write_text('\n'.join(entries),encoding='utf-8')
+            (folder/f'sample_run{suffix}.txt').write_text('\n'.join(entries),encoding='utf-8')
     print(f"PASS: {len(programs)} programs; {len(results)} checks")
 
 
