@@ -50,7 +50,7 @@ minimum=1.5 index=2
 
 ### 과제 3 · int와 short의 저장 단위
 
-교재 프로그래밍 연습 04번(p.504–505). int 4바이트·short 2바이트·리틀엔디언 환경을 확인한다. short *를 int 객체에 직접 역참조하는 별칭 위반을 피하려고 memcpy와 short 배열로 두 절반을 수정한 뒤 int에 반영한다. 예시 출력과 최종 값 0x000F00FF를 검증한다.
+교재 프로그래밍 연습 04번(p.504–505). C11 `_Static_assert`로 int 4바이트·short 2바이트·8비트 바이트를 컴파일할 때 확인하고, 실행할 때 리틀엔디언 여부를 확인한다. short *를 int 객체에 직접 역참조하는 별칭 위반을 피하려고 memcpy와 short 배열로 두 절반을 수정한 뒤 int에 반영한다. 예시 출력과 최종 값 0x000F00FF를 검증한다.
 
 ```bash
 cc -std=c11 -Wall -Wextra -Wpedantic week13/assignment03_ex04_pointer_halves.c -o exercise -lm
