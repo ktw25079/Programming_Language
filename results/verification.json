@@ -1,6 +1,7 @@
 {
   "platform": "Windows-11-10.0.26300-SP0",
   "compiler": "clang version 19.1.7 (https://github.com/ziglang/zig-bootstrap de1b01a8c1dddf75a560123ac1c2ab182b4830da)",
+  "compiler_family": "gcc-compatible",
   "program_count": 50,
   "case_count": 178,
   "cases": [
@@ -770,6 +771,6 @@
     "week12/guess.h": "1e02eb5fca1fa7025c6ab5051fbd0d3739ea5dccd36600e7da2ab581ffaaf40f",
     "week13/assignment01_reverse.c": "db44275746ff3561555b92c5bc56ab731a38bad09eaf8f49a9c669455950dfbf",
     "week13/assignment02_minimum.c": "cf05e78d0f226a299ebc56dbed12e6f05a674d3b8f917f67e7ca98053b4524bd",
-    "week13/assignment03_ex04_pointer_halves.c": "6572f66c7f3640e25d34117591bcbb8a51cd607116aa75cf926efb44ab8c83aa"
+    "week13/assignment03_ex04_pointer_halves.c": "373e5fea4f0e3a1b41a799d55e995de9a410b3055f5f3ea802591ad1e687f07d"
   }
 }
