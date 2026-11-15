@@ -40,7 +40,7 @@ quotient=undefined (division by zero)
 
 **요구사항:** 10진·8진·16진 정수 상수의 값을 비교한다.
 
-**풀이:** 8부터 15까지 각 값을 세 진법으로 적고, 여덟 번의 `printf`에서 모두 `%d`로 출력했다. 표기는 달라도 저장된 값이 같음을 확인했다.
+**풀이:** 8부터 15까지 각 값을 세 진법으로 적고, 여덟 번의 `printf`에서 모두 `%d`로 출력해 값이 같음을 확인했다.
 
 **실행 결과**
 
@@ -67,15 +67,11 @@ quotient=undefined (division by zero)
 C F R P
 ```
 
-## 검증 결과
-
-4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
 
-## 실행 방법
-
-저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+아래 명령은 저장소 루트에서 실행한다(GCC·Clang 계열). [Visual Studio 안내](../docs/reproduction.md)
 
 <details>
 <summary>과제별 컴파일·실행 명령</summary>
