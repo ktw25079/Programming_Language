@@ -1,10 +1,8 @@
 # week06 · 논리 연산과 수치 계산
 
-## 목표
+논리식의 참·거짓을 확인하고 단리·복리와 이차방정식을 계산했다.
 
-실습자료 6번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -13,24 +11,21 @@
 | [assignment03_ex08_compound_interest.c](assignment03_ex08_compound_interest.c) | 과제 3 · 복리 만기 금액 | 교재 p.248 |
 | [assignment04_ex10_quadratic.c](assignment04_ex10_quadratic.c) | 과제 4 · 이차방정식의 근과 검산 | 교재 p.248 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 논리식 여섯 개
 
-32비트 int 두 값의 합·차는 long long으로 계산해 signed overflow를 방지한다.
+**요구사항:** 두 정수에 대한 여섯 논리식의 결과를 출력한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment01_logic.c -o exercise -lm
-./exercise
-```
+**풀이:** 비교 연산과 `&&`, `||`, `!`를 조합해 거짓은 0, 참은 1로 출력했다. 합·차는 `long long`으로 확장해 32비트 int 입력의 오버플로를 방지했다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 100 55
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 0
@@ -43,20 +38,17 @@ cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment01_logic.c -o exercise -lm
 
 ### 과제 2 · 단리 만기 금액
 
-교재 프로그래밍 연습 07번. 원금 100만원, 연 4.5%라는 문제 조건의 단리 계산이다. 예치 기간은 정수 0~1000년.
+**요구사항:** 원금 100만원, 연 4.5%의 단리 만기 금액을 계산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment02_ex07_simple_interest.c -o exercise -lm
-./exercise
-```
+**풀이:** 기간을 입력받아 `원금*(1+이율*기간)`을 계산했다. 기간은 정수 0~1000년이며 원 단위 금액을 소수 둘째 자리까지 출력한다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 5
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 total=1225000.00 KRW
@@ -64,20 +56,17 @@ total=1225000.00 KRW
 
 ### 과제 3 · 복리 만기 금액
 
-교재 프로그래밍 연습 08번. math.h의 pow로 연 4.5% 복리를 계산한다. 예치 기간은 정수 0~1000년.
+**요구사항:** 동일한 원금과 이율로 복리 만기 금액을 계산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment03_ex08_compound_interest.c -o exercise -lm
-./exercise
-```
+**풀이:** `pow(1+이율, 기간)`에 원금 100만원을 곱했다. 연 4.5%, 정수 0~1000년 조건으로 단리와 결과를 비교했다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 5
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 total=1246181.94 KRW
@@ -85,24 +74,58 @@ total=1246181.94 KRW
 
 ### 과제 4 · 이차방정식의 근과 검산
 
-교재 프로그래밍 연습 10번. 2x²+3x−4=0의 두 근을 구하고 반올림 전 근을 대입한다. 잔차는 절댓값으로 표시하고 1e−12 이하인지 검사한다.
+**요구사항:** 2x²+3x−4=0의 두 근을 구하고 원래 식에 대입해 검산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment04_ex10_quadratic.c -o exercise -lm
-./exercise
-```
+**풀이:** 판별식과 근의 공식을 사용하고, 반올림 전 근을 원래 식에 대입했다. 잔차 절댓값이 1e−12 이하이면 정상 종료한다.
 
-표준입력이 필요 없는 고정 예제이다.
-
-검증한 출력:
+**실행 결과**
 
 ```text
 root1=0.851 residual=0.000
 root2=-2.351 residual=0.000
 ```
 
-## 결과
+## 검증 결과
 
-4개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
+4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
 
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 논리식 여섯 개**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment01_logic.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 단리 만기 금액**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment02_ex07_simple_interest.c -o exercise -lm
+./exercise
+```
+
+**과제 3 · 복리 만기 금액**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment03_ex08_compound_interest.c -o exercise -lm
+./exercise
+```
+
+**과제 4 · 이차방정식의 근과 검산**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week06/assignment04_ex10_quadratic.c -o exercise -lm
+./exercise
+```
+
+</details>
+
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
