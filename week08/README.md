@@ -71,7 +71,7 @@ for·while·do-while을 사용해 패턴 출력, 반복 입력과 누적 계산�
 
 **요구사항:** 1부터 더한 합이 10000 이하인 최대 n과 합을 구한다.
 
-**풀이:** 다음 항을 더해도 한도 이하인지 `while` 조건에서 먼저 확인했다. n=140까지의 합은 9870이며 141을 더하면 10011이 된다.
+**풀이:** 다음 항을 더해도 한도 이하인지 `while` 조건에서 먼저 확인했다.
 
 **실행 결과**
 
@@ -79,15 +79,11 @@ for·while·do-while을 사용해 패턴 출력, 반복 입력과 누적 계산�
 n=140 sum=9870 next=10011
 ```
 
-## 검증 결과
-
-4개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
 
-## 실행 방법
-
-저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+아래 명령은 저장소 루트에서 실행한다(GCC·Clang 계열). [Visual Studio 안내](../docs/reproduction.md)
 
 <details>
 <summary>과제별 컴파일·실행 명령</summary>
