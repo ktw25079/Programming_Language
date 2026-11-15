@@ -1,10 +1,8 @@
 # week04 · 전처리·헤더·입출력
 
-## 목표
+매크로·헤더로 계산식을 분리하고 입력값과 출력 형식을 다루는 방법을 복습했다.
 
-실습자료 4번의 과제를 구현하고 교재의 조건과 실행 결과를 확인한다.
-
-## 과정
+## 과제와 코드
 
 | 코드 | 요구사항 | 원문 위치 |
 | --- | --- | --- |
@@ -14,24 +12,21 @@
 | [assignment03_ex05_areas.c](assignment03_ex05_areas.c) | 과제 3-05 · 면적 출력의 필드 폭과 정렬 | 교재 p.199 |
 | [assignment03_ex07_average.c](assignment03_ex07_average.c) | 과제 3-07 · 두 실수의 합과 평균 | 교재 p.200 |
 
-각 프로그램은 별도의 `main`을 가진다. 저장소 루트에서 **한 프로그램씩** 컴파일한다.
+## 풀이와 실행 결과
 
 ### 과제 1 · 온도 변환 매크로
 
-섭씨 −273.15~1,000,000 범위를 허용한다.
+**요구사항:** 섭씨 온도를 입력받아 켈빈과 화씨로 변환한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment01_temperature.c -o exercise -lm
-./exercise
-```
+**풀이:** `C2K(x)=x+273.15`, `C2F(x)=1.8*x+32`를 함수형 매크로로 작성했다. 섭씨 −273.15~1,000,000 범위의 유한값을 입력받는다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 100
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 kelvin=373.150 fahrenheit=212.000
@@ -39,20 +34,17 @@ kelvin=373.150 fahrenheit=212.000
 
 ### 과제 2 · 헤더와 시간 변환
 
-32비트 int 기준 오버플로를 피하도록 시 0~596522, 분·초 0~59로 제한한다.
+**요구사항:** 별도 헤더의 자료형과 매크로를 사용해 시·분·초를 초로 환산한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment02_time.c -o exercise -lm
-./exercise
-```
+**풀이:** [time_units.h](time_units.h)에 `mytime`과 `TO_SECONDS`를 정의해 `시*3600+분*60+초`를 계산했다. 시는 0~596522, 분·초는 0~59로 제한해 int 범위 안에서 계산한다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 1 2 3
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 seconds=3723
@@ -60,20 +52,17 @@ seconds=3723
 
 ### 과제 3-04 · 문자와 진법별 코드
 
-교재 프로그래밍 연습 04번. 문자 한 바이트를 읽어 문자·8진·10진·16진 순서로 출력한다. 물음표도 유효한 문자이다.
+**요구사항:** 입력 문자와 해당 코드의 8진·10진·16진 표현을 출력한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment03_ex04_codes.c -o exercise -lm
-./exercise
-```
+**풀이:** `getchar`로 한 바이트를 읽고 `%c`, `%#o`, `%u`, `%#x`를 사용했다. 8진수와 16진수에는 접두사를 표시했다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 $
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 $ 044 36 0x24
@@ -81,20 +70,17 @@ $ 044 36 0x24
 
 ### 과제 3-05 · 면적 출력의 필드 폭과 정렬
 
-교재 프로그래밍 연습 05번. 사각형은 %12.3f, 삼각형은 %-12.3f로 출력한다. 양쪽 길이는 0~1,000,000이며 같은 길이 단위로 입력한다. 결과 단위는 그 제곱이다.
+**요구사항:** 두 길이로 사각형·삼각형 면적을 구하고 지정한 폭과 정렬로 출력한다.
 
-```bash
-cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment03_ex05_areas.c -o exercise -lm
-./exercise
-```
+**풀이:** 가로×세로와 그 절반을 계산하고 `%12.3f`는 오른쪽, `%-12.3f`는 왼쪽 정렬에 사용했다. 두 길이는 같은 단위의 0~1,000,000 값이며 결과는 그 제곱 단위이다.
 
-입력 예시:
+**입력 예시**
 
 ```text
 3.78 9.45
 ```
 
-검증한 출력:
+**실행 결과**
 
 ```text
 rectangle:       35.721
@@ -103,27 +89,70 @@ triangle:  17.860
 
 ### 과제 3-07 · 두 실수의 합과 평균
 
-교재 프로그래밍 연습 07번. 합과 평균을 모두 실수로 계산한다. 입력 절댓값 ≤ 1e100.
+**요구사항:** 두 실수의 합과 평균을 출력한다.
+
+**풀이:** `double`로 입력받아 `a+b`, `(a+b)/2.0`을 계산했다. 정수 나눗셈을 피하고 소수 여섯째 자리까지 출력한다. 입력 절댓값은 1e100 이하이다.
+
+**입력 예시**
+
+```text
+3.876 25.983
+```
+
+**실행 결과**
+
+```text
+sum=29.859000 average=14.929500
+```
+
+## 검증 결과
+
+5개 프로그램을 Zig와 MSVC에서 C11로 빌드하고 실행했다. 경고 없이 컴파일되었으며 등록된 실행 검사를 통과했다.
+
+[Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
+
+## 실행 방법
+
+저장소 루트에서 아래 명령으로 한 프로그램씩 빌드·실행한다. GCC·Clang 계열 C11 컴파일러 기준이며, [Visual Studio 실행 방법](../docs/reproduction.md)도 확인할 수 있다.
+
+<details>
+<summary>과제별 컴파일·실행 명령</summary>
+
+**과제 1 · 온도 변환 매크로**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment01_temperature.c -o exercise -lm
+./exercise
+```
+
+**과제 2 · 헤더와 시간 변환**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment02_time.c -o exercise -lm
+./exercise
+```
+
+**과제 3-04 · 문자와 진법별 코드**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment03_ex04_codes.c -o exercise -lm
+./exercise
+```
+
+**과제 3-05 · 면적 출력의 필드 폭과 정렬**
+
+```bash
+cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment03_ex05_areas.c -o exercise -lm
+./exercise
+```
+
+**과제 3-07 · 두 실수의 합과 평균**
 
 ```bash
 cc -std=c11 -Wall -Wextra -Wpedantic week04/assignment03_ex07_average.c -o exercise -lm
 ./exercise
 ```
 
-입력 예시:
+</details>
 
-```text
-3.876 25.983
-```
-
-검증한 출력:
-
-```text
-sum=29.859000 average=14.929500
-```
-
-## 결과
-
-5개 프로그램의 경고 없는 컴파일과 실행을 확인했다. [실제 실행 로그](results/sample_run.txt) · [전체 검사 결과](../results/verification.json)
-
-[전체 목록](../README.md) · [입력·빌드 안내](../docs/reproduction.md) · [출처와 범위](../docs/provenance.md)
+[전체 목록](../README.md) · [과제 대응과 구현 조건](../docs/coverage.md)
