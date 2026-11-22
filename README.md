@@ -1,10 +1,10 @@
 # Programming Language
 
-**C 언어 수업 과제를 다시 풀며 정리한 코드·풀이·실행 결과.**
+**배열·함수·포인터로 구현한 C 프로그램 50개와 정상·경계 입력 자동 검증.**
 
-## 정리 목적
+## 구현 목적
 
-취업 준비를 위해 대학교 프로그래밍언어 수업을 복습하며 자료형, 제어문, 배열, 함수와 포인터를 활용한 문제 해결 과정을 정리했다.
+기초 문법을 배열 연산, 다중 파일 함수 연결, 스택과 포인터 탐색에 적용했다. 각 과제에 입력 조건과 기대 출력을 명시하고, 정상 동작뿐 아니라 경계값·종료 조건을 자동 검사하도록 구성했다.
 
 ## 대표 과제와 풀이
 
@@ -18,7 +18,7 @@
 
 ## 확인한 결과
 
-**50개 C 프로그램 · 컴파일러별 178개 검사 통과 · 컴파일 경고 0개.** Windows에서 Zig와 Visual Studio의 MSVC로 확인했다.
+**50개 C 프로그램 · 컴파일러별 178개 검사 통과 · 컴파일 경고 0개.** Windows의 Zig·MSVC와 Linux의 GCC에서 확인했다.
 
 정상 출력과 함께 학점 경계, 0 분모, 정수 오버플로, 반복 종료, 배열 복사와 스택의 가득 참·빈 상태를 검사했다. [검증 환경과 실행 기록](results/README.md) · [과제 대응과 구현 조건](docs/coverage.md)
 
@@ -49,7 +49,7 @@
 ```bash
 git clone https://github.com/ktw25079/Programming_Language.git
 cd Programming_Language
-python tools/verify.py --cc gcc
+python3 tools/verify.py --cc gcc
 ```
 
 개별 프로그램은 Python 없이 실행할 수 있다. [컴파일러별 실행 안내](docs/reproduction.md) · [Visual Studio 솔루션](week01/mybook/README.md)
