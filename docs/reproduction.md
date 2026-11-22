@@ -5,8 +5,8 @@
 저장소 루트에서 Python 3.10 이상과 C11 컴파일러로 실행한다. 외부 Python 패키지는 필요 없다.
 
 ```bash
-python tools/verify.py --cc gcc
-python tools/verify.py --cc "zig cc"
+python3 tools/verify.py --cc gcc
+python3 tools/verify.py --cc "zig cc"
 ```
 
 컴파일러 경로에 공백이 있으면 `--cc` 값 안에서 실행 파일 경로를 따옴표로 감싼다. 출력은 `build/`에 생성한다. 프로그램마다 독립된 `main`이 있으므로 모든 C 파일을 한 번에 링크하지 않는다. `week12/assignment01_guess.c`만 `week12/guess.c`와 함께 링크한다.
