@@ -4,6 +4,7 @@
 
 | 검증 환경 | 결과 | 기록 |
 | --- | --- | --- |
+| GCC 11.4.0, Linux x86_64, C11 | 50개 프로그램·178개 검사 통과 | [verification_gcc_linux.json](verification_gcc_linux.json) |
 | Zig 0.14.1, C11 | 50개 프로그램·178개 검사 통과 | [verification.json](verification.json) |
 | Visual Studio 2022 Community 17.14.45, MSVC 19.44.35230 x64, C11 | 50개 프로그램·178개 검사 통과 | [verification_msvc.json](verification_msvc.json) |
 | mybook, MSBuild·v143·Windows SDK 10.0.26100.0 | 네 구성 빌드 성공·12회 실행 출력 일치 | [mybook_msvc.json](mybook_msvc.json) |
