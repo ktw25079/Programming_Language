@@ -44,6 +44,8 @@ popped=3
 empty
 ```
 
+[함수 검사](../tests/function_contracts.c)에서 빈 상태의 pop, 가득 찬 상태의 push 거부와 삭제 후 재삽입을 확인했다.
+
 ## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
