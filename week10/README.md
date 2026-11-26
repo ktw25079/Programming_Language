@@ -82,6 +82,8 @@ b before: 10 20 30 40 50 60
 b after: 4 7 9 3 6 60
 ```
 
+[함수 검사](../tests/function_contracts.c)에서 0개 복사, 복사 범위 밖 값 보존, 원본 변경 후 대상 배열의 독립성을 확인했다.
+
 ## 실행과 검증
 
 [Zig 실행 로그](results/sample_run.txt) · [MSVC 실행 로그](results/sample_run_msvc.txt) · [전체 검증 결과](../results/README.md)
