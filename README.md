@@ -1,26 +1,53 @@
-# Programming Language
+# C 자료구조 · 스택과 배열 경계 처리
 
-**배열·함수·포인터로 구현한 C 프로그램 50개와 정상·경계 입력 자동 검증.**
+수업 과제를 재구현하며 C의 배열·함수·포인터를 복습했다. **50개 프로그램을 GCC·Zig·MSVC에서 각각 178개 검사로 확인했다.**
 
-## 구현 목적
+## 용량 3의 스택 · 역순 반환과 경계 처리
 
-기초 문법을 배열 연산, 다중 파일 함수 연결, 스택과 포인터 탐색에 적용했다. 각 과제에 입력 조건과 기대 출력을 명시하고, 정상 동작뿐 아니라 경계값·종료 조건을 자동 검사하도록 구성했다.
+배열과 `top`으로 push/pop을 구현하고, 가득 찼거나 비었을 때 배열에 접근하기 전에 처리를 끝냈다.
 
-## 대표 과제와 풀이
+<table>
+<tr><th>실제 입력 → 출력</th><th>결과 해석과 검증 근거</th></tr>
+<tr><td><pre>+ 3 → pushed
++ 5 → pushed
++ 9 → pushed
++ 1 → full
+  - → popped=9
+  - → popped=5
+  - → popped=3
+  - → empty</pre></td><td>
+<p><b>3·5·9를 넣으면 9·5·3 순서로 나온다.</b><br>네 번째 삽입은 <code>full</code>, 빈 스택의 삭제는 <code>empty</code>로 처리한다.</p>
+<p>MSVC 실행 로그의 명령과 출력을 한 줄씩 대응했다. 마지막 <code>q</code>는 출력 없이 종료한다.</p>
+<p><a href="week12/assignment02_03_stack.c">스택 코드</a> · <a href="week12/results/sample_run_msvc.txt">실제 실행 로그</a><br><a href="tests/function_contracts.c">경계·재사용 함수 검사</a> · <a href="week12/README.md">풀이와 실행법</a></p>
+</td></tr>
+</table>
 
-| 과제 요구사항 | 풀이 방법 | 확인한 결과 |
+출력의 `popped` 순서와 `full`·`empty`를 보면 LIFO 동작과 용량 경계 처리를 확인할 수 있다.
+
+## 배열 복사 · 지정한 범위만 변경
+
+`copyarray(from, to, n)`에서 앞의 n개만 복사했다. 5개 원소를 6칸 배열에 복사했을 때 마지막 값 60이 유지된다.
+
+```text
+a:        4  7  9  3  6
+b before: 10 20 30 40 50 60
+b after:  4  7  9  3  6 60
+```
+
+실행 로그를 열 간격만 맞춰 표시했다. 함수 검사에서는 **0개 복사 시 대상 배열 유지**, **복사 후 원본을 변경해도 대상 배열 유지**까지 확인했다.
+[복사 코드](week10/assignment04_copy.c) · [실행 로그](week10/results/sample_run_msvc.txt) · [함수 검사](tests/function_contracts.c) · [풀이와 실행법](week10/README.md)
+
+## 검증 범위
+
+Python 도구로 각 C 프로그램을 독립 빌드하고 기대 출력·종료 코드와 비교했다. 학점 경계, 0 분모, 정수 오버플로와 반복 종료를 검사하고, 배열·스택 함수는 C의 `assert`로 상태와 값을 확인했다.
+
+| 실행 환경 | 결과 | 근거 |
 | --- | --- | --- |
-| [평균과 학점 계산](week09/assignment01_grades.c) | 배열에 점수를 저장하고 평균에 따라 조건 분기 | 90·80·100·70·60점 입력 시 평균 80.00, B학점 |
-| [5×3 행렬 전치](week09/assignment02_transpose.c) | 이중 반복문으로 행과 열의 위치를 교환 | 3×5 행렬의 원소 배치 확인 |
-| [숫자 맞히기와 변수 유효범위](week12/README.md) | 전역 정답과 지역 입력을 구분하고 비교 함수를 별도 파일로 분리 | 대소 힌트 출력, 정답 입력 시 종료 |
-| [용량 3의 스택](week12/assignment02_03_stack.c) | 배열과 top으로 push/pop, 가득 참·빈 상태 처리 | 3·5·9 삽입 후 9·5·3 순서로 반환 |
-| [포인터로 최솟값 탐색](week13/assignment02_minimum.c) | 포인터로 순회하며 더 작은 원소의 주소 저장 | 최솟값 1.5, 첫 위치의 첨자 2 |
+| Linux x86_64 · GCC 11.4.0 | 50개 프로그램·178개 검사 통과 | [GCC 기록](results/verification_gcc_linux.json) |
+| Windows · Zig 0.14.1 | 50개 프로그램·178개 검사 통과 | [Zig 기록](results/verification.json) |
+| Windows x64 · MSVC 19.44.35230 | 50개 프로그램·178개 검사 통과 | [MSVC 기록](results/verification_msvc.json) |
 
-## 확인한 결과
-
-**50개 C 프로그램 · 컴파일러별 178개 검사 통과 · 컴파일 경고 0개.** Windows의 Zig·MSVC와 Linux의 GCC에서 확인했다.
-
-정상 출력과 함께 학점 경계, 0 분모, 정수 오버플로, 반복 종료, 배열 복사와 스택의 가득 참·빈 상태를 검사했다. [검증 환경과 실행 기록](results/README.md) · [과제 대응과 구현 조건](docs/coverage.md)
+모두 C11과 경고를 오류로 처리하는 옵션으로 빌드했다. [검증 도구](tools/verify.py) · [기대 출력](tests/programs.json) · [세부 검증 범위](results/README.md)
 
 ## 주차별 코드
 
