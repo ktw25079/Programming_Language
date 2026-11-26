@@ -1,13 +1,13 @@
-# C 자료구조 · 스택과 배열 경계 처리
+# C 프로그래밍 · 수업 과제 풀이
 
-수업 과제를 재구현하며 C의 배열·함수·포인터를 복습했다. **50개 프로그램을 GCC·Zig·MSVC에서 각각 178개 검사로 확인했다.**
+수업에서 다룬 문제를 다시 풀며 C의 배열·함수·포인터를 복습했다. **50개 프로그램을 작성하고 GCC·Zig·MSVC에서 각각 178개 검사를 통과했다.**
 
-## 용량 3의 스택 · 역순 반환과 경계 처리
+## 스택 · 넣은 순서의 역순으로 꺼내기
 
-배열과 `top`으로 push/pop을 구현하고, 가득 찼거나 비었을 때 배열에 접근하기 전에 처리를 끝냈다.
+크기가 3인 배열과 마지막 원소의 위치를 나타내는 `top`으로 push/pop을 구현했다. 가득 차면 더 넣지 않고, 비어 있으면 꺼내지 않도록 먼저 상태를 확인한다.
 
 <table>
-<tr><th>실제 입력 → 출력</th><th>결과 해석과 검증 근거</th></tr>
+<tr><th>입력 → 출력</th><th>확인한 동작</th></tr>
 <tr><td><pre>+ 3 → pushed
 + 5 → pushed
 + 9 → pushed
@@ -17,12 +17,12 @@
   - → popped=3
   - → empty</pre></td><td>
 <p><b>3·5·9를 넣으면 9·5·3 순서로 나온다.</b><br>네 번째 삽입은 <code>full</code>, 빈 스택의 삭제는 <code>empty</code>로 처리한다.</p>
-<p>MSVC 실행 로그의 명령과 출력을 한 줄씩 대응했다. 마지막 <code>q</code>는 출력 없이 종료한다.</p>
+<p>MSVC 실행 기록에서 입력과 출력을 짝지어 표시했다. 마지막 <code>q</code>를 입력하면 종료한다.</p>
 <p><a href="week12/assignment02_03_stack.c">스택 코드</a> · <a href="week12/results/sample_run_msvc.txt">실제 실행 로그</a><br><a href="tests/function_contracts.c">경계·재사용 함수 검사</a> · <a href="week12/README.md">풀이와 실행법</a></p>
 </td></tr>
 </table>
 
-출력의 `popped` 순서와 `full`·`empty`를 보면 LIFO 동작과 용량 경계 처리를 확인할 수 있다.
+`popped`의 숫자는 꺼낸 순서이고, `full`과 `empty`는 각각 가득 찬 상태와 빈 상태를 뜻한다.
 
 ## 배열 복사 · 지정한 범위만 변경
 
@@ -34,7 +34,7 @@ b before: 10 20 30 40 50 60
 b after:  4  7  9  3  6 60
 ```
 
-실행 로그를 열 간격만 맞춰 표시했다. 함수 검사에서는 **0개 복사 시 대상 배열 유지**, **복사 후 원본을 변경해도 대상 배열 유지**까지 확인했다.
+실행 기록의 숫자 간격만 맞춰 표시했다. **0개를 복사하면 배열이 바뀌지 않는지**, **복사 후 원본을 바꿔도 복사한 값이 그대로인지**도 함수 검사로 확인했다.
 [복사 코드](week10/assignment04_copy.c) · [실행 로그](week10/results/sample_run_msvc.txt) · [함수 검사](tests/function_contracts.c) · [풀이와 실행법](week10/README.md)
 
 ## 검증 범위
@@ -83,7 +83,7 @@ python3 tools/verify.py --cc gcc
 
 | 경로 | 내용 |
 | --- | --- |
-| [docs/](docs/README.md) | 원문 대응, 구현 선택, 입력과 빌드 조건 |
+| [docs/](docs/README.md) | 교재 문제 번호, 풀이 조건과 빌드 방법 |
 | [tests/](tests/README.md) | 프로그램 목록과 기대 출력 |
 | [tools/](tools/README.md) | 컴파일·실행·경계값 검사 도구 |
 | [results/](results/README.md) | 실제 검증 결과와 소스 해시 |
